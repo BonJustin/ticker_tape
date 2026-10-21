@@ -1,0 +1,17 @@
+# All paths are relative to the project root (~/dev/ticker_tape/)
+paths:
+  app: "build"
+  src: "content"
+  dst: "dist"
+
+# assets_dir: directory name for subfolders containing media(images, etc.), css, and js files.
+# remember_days: number of days to remember StatiCrypt decryption password in browser cache.
+metadata:
+  assets_dir: "assets"
+  remember_days: 0
+
+# each item in this list will be added as a link to the global navigation menu of the static
+# site. they will be added to the menu in the order they are presented here.
+navigation_menu:
+  - Bookmarks
+  - Reminders
