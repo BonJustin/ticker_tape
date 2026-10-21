@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function initPagefind() {
     if (!pagefind) {
       try {
-        pagefind = await import("/pagefind/pagefind.js");
+        pagefind = await import("/ticker_tape/pagefind/pagefind.js");
         await pagefind.init();
       } catch (err) {
         console.error("Failed to load Pagefind index.", err);
