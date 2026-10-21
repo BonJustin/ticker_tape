@@ -310,7 +310,7 @@ def encrypt_file(
         "-d",
         file_path.parent.as_posix(),
         "--config",
-        STATICRYPT_CONFIG.name(),
+        STATICRYPT_CONFIG.name,
         "--short",
     ]
 
@@ -404,7 +404,7 @@ def encrypt_secure_directories(
             "-d",
             s_dir.parent.as_posix(),
             "--config",
-            STATICRYPT_CONFIG.name(),
+            STATICRYPT_CONFIG.name,
             "--short",
         ]
 
