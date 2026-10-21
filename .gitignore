@@ -1,5 +1,4 @@
 dist/
-*.html
 *.log
 
 .DS_Store
