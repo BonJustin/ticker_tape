@@ -310,7 +310,7 @@ def encrypt_file(
         "-d",
         file_path.parent.as_posix(),
         "--config",
-        STATICRYPT_CONFIG.as_posix(),
+        STATICRYPT_CONFIG.name(),
         "--short",
     ]
 
@@ -332,7 +332,12 @@ def encrypt_file(
     try:
         # Explicitly passing env=os.environ guarantees environment variable propagation on Windows.
         result = subprocess.run(
-            cmd, capture_output=True, text=True, shell=is_windows, env=os.environ
+            cmd,
+            capture_output=True,
+            text=True,
+            shell=is_windows,
+            env=os.environ,
+            cwd=PROJECT_ROOT,
         )
         if result.returncode != 0:
             logging.error(
@@ -399,7 +404,7 @@ def encrypt_secure_directories(
             "-d",
             s_dir.parent.as_posix(),
             "--config",
-            STATICRYPT_CONFIG.as_posix(),
+            STATICRYPT_CONFIG.name(),
             "--short",
         ]
 
@@ -421,7 +426,12 @@ def encrypt_secure_directories(
         try:
             # Explicitly passing env=os.environ guarantees environment variable propagation on Windows.
             result = subprocess.run(
-                cmd, capture_output=True, text=True, shell=is_windows, env=os.environ
+                cmd,
+                capture_output=True,
+                text=True,
+                shell=is_windows,
+                env=os.environ,
+                cwd=PROJECT_ROOT,
             )
             if result.returncode != 0:
                 logging.error(
