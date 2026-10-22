@@ -212,12 +212,3 @@ pre {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
-/* Remove the default arrow/carat from dropdowns */
-details.dropdown summary {
-  list-style: none; /* Standard for Firefox and modern Chrome */
-}
-
-details.dropdown summary::-webkit-details-marker {
-  display: none; /* Required for Safari and legacy Chrome/Edge */
-}
