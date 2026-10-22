@@ -200,11 +200,10 @@ nav details.dropdown > summary + ul {
 details.link-dropdown summary {
   display: inline-block;
   background: transparent;
-  border: none !important;
   padding: 0;
   margin: 0;
   width: auto;
-  color: var(--pico-primary); /* Uses Pico's primary link color */
+  color: var(--pico-primary-hover); /* Uses Pico's primary link color */
   cursor: pointer;
 }
 
