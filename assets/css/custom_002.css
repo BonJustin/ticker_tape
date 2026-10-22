@@ -195,6 +195,28 @@ nav details.dropdown > summary + ul {
     right: 0; /* Anchor to the right edge of the parent */
 }
 
+/* Make the summary trigger look like a regular text link */
+details.link-dropdown summary {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  color: var(--pico-primary); /* Uses Pico's primary link color */
+  cursor: pointer;
+}
+
+/* Remove Pico's default dropdown arrow icon */
+details.link-dropdown summary::after {
+  display: none;
+}
+
+/* Optional: Add a subtle hover state */
+details.link-dropdown summary:hover {
+  color: var(--pico-primary-hover);
+}
+
 .brand_text {
     color: var(--pico-primary);
     font-size: 2rem;
