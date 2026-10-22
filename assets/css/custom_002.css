@@ -185,6 +185,7 @@ math[display="block"] {
 nav details.dropdown {
     position: relative;
     display: inline-block; /* Changed from inline to ensure block-like constraints */
+    border: none;
 }
 
 /* Align the dropdown menu flush with the right edge of the button */
