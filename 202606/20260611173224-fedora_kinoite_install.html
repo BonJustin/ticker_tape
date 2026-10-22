@@ -1,0 +1,680 @@
+<!doctype html>
+<html
+    data-theme="light"
+    xmlns="http://www.w3.org/1999/xhtml"
+    >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+                  <meta
+            name="keywords"
+            content="computer reference, linux, fedora, kinoite"
+        />
+         
+        <title>Linux Initial Installation</title>
+
+        <!-- Portable Asset Resolution using relative_root -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../favicon.ico"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../favicon.svg"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="../favicon-96x96.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="../apple-touch-icon.png"
+        />
+        <link rel="manifest" href="../site.webmanifest" />
+
+                <link rel="stylesheet" href="../assets/css/pico.css" />
+                <link rel="stylesheet" href="../assets/css/custom_002.css" />
+                <link rel="stylesheet" href="../assets/katex/katex.min.css" />
+        
+        <script
+            src="../assets/js/pico_pagefind.js"
+            type="module"
+        ></script>
+
+         
+    </head>
+
+    <body>
+        <header class="container site_header">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="brand_text"
+                            ><a
+                                href="https://jmbsquared.com"
+                                style="text-decoration: none"
+                                >JmB²</a
+                            ></span
+                        >
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="../index.html" data-tooltip="Home">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-house-icon lucide-house"
+                            >
+                                <path
+                                    d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+                                />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="open-search" data-tooltip="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search-icon lucide-search"
+                            >
+                                <path d="m21 21-4.34-4.34" />
+                                <circle cx="11" cy="11" r="8" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <details class="dropdown">
+                            <summary role="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="../qsjwbuf/20260602080508.html"
+                                        data-tooltip="Private"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"
+                                        >
+                                            <circle cx="12" cy="16" r="1" />
+                                            <rect
+                                                x="3"
+                                                y="10"
+                                                width="18"
+                                                height="12"
+                                                rx="2"
+                                            />
+                                            <path
+                                                d="M7 10V7a5 5 0 0 1 10 0v3"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="../Bookmarks.html"
+                                        >Bookmarks</a
+                                    >
+                                </li>
+                                                                <li>
+                                    <a href="../Reminders.html"
+                                        >Reminders</a
+                                    >
+                                </li>
+                                                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+            <hr />
+
+            
+        </header>
+
+        <main>
+            <div class="container">
+                <div style="display: none">
+                                        <span data-pagefind-body data-pagefind-meta="title">
+                        Linux Initial Installation
+                    </span>
+                                         <span data-pagefind-body data-pagefind-meta="keywords">
+                        computer reference, linux, fedora, kinoite
+                    </span>
+                                    </div>
+
+                                <header id="title-block-header">
+                    <h1 class="title">Linux Initial Installation</h1>
+
+                                         <p class="date">2026-06-11 17:32:24</p>
+                                         <div class="abstract">This is a rough outline of my initial Fedora Kinoite installtion. I have tried to modify it as I alter bits and pieces of the system, though this is proving difficult to keep up with.</div>
+                                        <hr />
+                </header>
+                  <section id="fedora-on-nvme-m.2" class="level2">
+<h2>Fedora on NVMe M.2</h2>
+<p>I recently ordered a new Framework laptop that will be delivered in 3 months. My current desktop runs Windows 11 Pro. My desktop has two internal NVME M.2 drives and a third SATA SSD. The default boot drive is a 4 TB drive. The second NVME M.2 drive is 2 TB and was not in use. The third is a 2 TB SATA SSD used as a data only archive.</p>
+<p>I want to run the new Framework laptop with Fedora (Linux). I have downloaded and installed Fedora Workstation on the secondary NVME M.2 (2 TB). I want to set up this drive to be fully prepared for installation on the Framework laptop when it arrives.</p>
+<p>My philosophical purpose is to “digitally decouple” from SaaS where possible but maintain professional grade compute power. I will maintain my Windows 11 Pro environment as migrating to Linux will take significant time and effort.</p>
+</section>
+<section id="fedora-version" class="level2">
+<h2>Fedora version</h2>
+<p>I have decided to try Kinoite for immutability and security. I will need to review the notes in this plan and alter as needed.</p>
+</section>
+<section id="laptop-purposes" class="level2">
+<h2>Laptop Purposes</h2>
+<ul>
+<li>Python development with use of <code>uv</code>
+<ul>
+<li>Zed IDE initially. I will consider VS Code later if I am dissatisfied.</li>
+<li>Beyond the Python standard library, I frequently use openai, matplotlib, numpy, pypandoc, seaborn, and pandas.</li>
+</ul></li>
+<li>Photography image archive and editing. I currently use Adobe Photoshop and Bridge, but will be migrating to alternatives.
+<ul>
+<li>Currently investigating digiKAM, darktable, rawtherapee, and gimp.</li>
+</ul></li>
+<li>Local LLM inference and programming via Python and use via chat with LLaMa.cpp and Hugging Face quantized GGUF or better alternative if one exists. I can prepare the software and download the models prior to receiving the new laptop, but I can’t actually run them as my GPU/CPU/VRAM/RAM profile will be entirely different on the new machine than on my desktop.</li>
+<li>Moderate gaming via Steam depending on games available in my Steam library.</li>
+<li>Extensive CLI utility support and scripting. Rclone, 7zip or alternative, Picocrypt, StatiCrypt, Pandoc, Something akin to HWInfo, Veracrypt (or alternative), possibly LaTeX, Typst, etc… pretty sure this implies Node.js among others.)</li>
+<li>Tor Browser and Onion capacity in addition to Firefox.</li>
+<li>I carry Tails OS on a flash drive for secure amnesic communications standards, this should work on the new laptop.</li>
+<li>I want to be very careful about anonymity and security, isolating effects on the OS, and exposure to threat vectors, without disabling my computer function.</li>
+<li>Kiwix and offline English Wikipedia, extensive OpenStax PDF textbook library.</li>
+</ul>
+</section>
+<section id="implementation-plan" class="level2">
+<h2>Implementation Plan</h2>
+<section id="section" class="level3">
+<h3>1</h3>
+<ul>
+<li>Install Fedora (Kinoite) with encryption enabled. I used Fedora Media Writer on Windows to make a bootable USB (16 GB) that installs Kinoite. Kinoite is an atomic/immutable Fedora that uses the KDE Plasma GUI.</li>
+</ul>
+</section>
+<section id="section-1" class="level3">
+<h3>2</h3>
+<ul>
+<li>Update the immutable system image.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm-ostree</span> upgrade</span></code></pre></div>
+<p><em>(Note: If updates are applied, you will need to reboot to slide into the new system deployment).</em></p>
+</section>
+<section id="section-2" class="level3">
+<h3>3</h3>
+<ul>
+<li>Ensure Flathub is enabled and install Flatseal for managing sandbox permissions.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> remote-add <span class="at">--if-not-exists</span> flathub https://dl.flathub.org/repo/flathub.flatpakrepo</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub com.github.tchx84.Flatseal <span class="at">-y</span></span></code></pre></div>
+</section>
+<section id="section-3" class="level3">
+<h3>4</h3>
+<ul>
+<li>Install <code>uv</code> (installs cleanly into your writable user space under <code>~/.local/bin</code>).</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div>
+</section>
+<section id="section-4" class="level3">
+<h3>5</h3>
+<ul>
+<li>Install Python for development (completely isolated from the host).</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.14.5</span></code></pre></div>
+</section>
+<section id="section-5" class="level3">
+<h3>6</h3>
+<p><em>I haven’t needed this yet.</em></p>
+<ul>
+<li><strong>Toolbx / Distrobox Considerations:</strong> On Kinoite, you cannot easily install system-level library headers (<code>-devel</code> packages) on the host system. Therefore, if a Python package requires compiling C-extensions and throws errors about missing system headers, you <strong>must</strong> use Toolbx or Distrobox.
+<ul>
+<li>Create a development container: <code>toolbox create</code></li>
+<li>Enter it: <code>toolbox enter</code></li>
+<li>Install your development libraries inside the container via <code>dnf</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-6" class="level3">
+<h3>7</h3>
+<ul>
+<li>Install Zed (installs to user space via <code>~/.local</code>).</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-f</span> https://zed.dev/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
+</section>
+<section id="section-7" class="level3">
+<h3>8</h3>
+<ul>
+<li>Install ruff via <code>uv</code> as a globally available Zed linter.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> tool install ruff</span></code></pre></div>
+</section>
+<section id="section-8" class="level3">
+<h3>9</h3>
+<ul>
+<li>Install Markdownlint (an extension for Zed).
+<ol type="1">
+<li>Command palette <code>Ctrl + Shift + P</code>.</li>
+<li>Search for <code>zed: extensions</code>.</li>
+<li>Find <strong>Markdownlint</strong> and click <strong>Install</strong>.</li>
+</ol></li>
+</ul>
+</section>
+<section id="section-9" class="level3">
+<h3>10</h3>
+<ul>
+<li>Install Node.js via <strong><code>fnm</code></strong> (Fast Node Manager) instead of <code>dnf</code>. This keeps Node.js and all global NPM packages completely inside your user space, removing the need for <code>sudo</code> or global prefix workarounds.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install fnm</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://fnm.vercel.app/install <span class="kw">|</span> <span class="fu">bash</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and use the latest Long-Term Support (LTS) version of Node.js</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> install <span class="at">--lts</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> use lts-latest</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> <span class="at">-v</span></span></code></pre></div>
+</section>
+<section id="section-10" class="level3">
+<h3>11</h3>
+<ul>
+<li>Install Typst CLI. Download the precompiled static binary directly to your user space <code>~/.local/bin</code> to keep the host system clean.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download, extract, and copy the static binary</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure your user-space bin directory exists</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.local/bin</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the correct .tar.xz archive</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract using the standard tar extraction flag (automatically handles .xz)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> typst-x86_64-unknown-linux-musl.tar.xz</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Copy the binary to your local bin path</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> typst-x86_64-unknown-linux-musl/typst ~/.local/bin/</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up downloaded files</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> typst-x86_64-unknown-linux-musl<span class="pp">*</span></span></code></pre></div>
+</section>
+<section id="section-11" class="level3">
+<h3>12</h3>
+<ul>
+<li>Install the Typst extension for Zed.</li>
+</ul>
+</section>
+<section id="section-12" class="level3">
+<h3>13</h3>
+<ul>
+<li>Zed <code>settings.json</code> configuration</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">Zed</span> <span class="er">settings</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="er">//</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">For</span> <span class="er">information</span> <span class="er">on</span> <span class="er">how</span> <span class="er">to</span> <span class="er">configure</span> <span class="er">Zed,</span> <span class="er">see</span> <span class="er">the</span> <span class="er">Zed</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">documentation:</span> <span class="er">https://zed.dev/docs/configuring-zed</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="er">//</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">To</span> <span class="er">see</span> <span class="er">all</span> <span class="er">of</span> <span class="er">Zed&#39;s</span> <span class="er">default</span> <span class="er">settings</span> <span class="er">without</span> <span class="er">changing</span> <span class="er">your</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">custom</span> <span class="er">settings,</span> <span class="er">run</span> <span class="er">`zed:</span> <span class="er">open</span> <span class="er">default</span> <span class="er">settings`</span> <span class="er">from</span> <span class="er">the</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">command</span> <span class="er">palette</span> <span class="er">(cmd-shift-p</span> <span class="er">/</span> <span class="er">ctrl-shift-p)</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;project_panel&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;dock&quot;</span><span class="fu">:</span> <span class="st">&quot;left&quot;</span><span class="fu">,</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;minimap&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;show&quot;</span><span class="fu">:</span> <span class="st">&quot;always&quot;</span><span class="fu">,</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;soft_wrap&quot;</span><span class="fu">:</span> <span class="st">&quot;editor_width&quot;</span><span class="fu">,</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;ui_font_size&quot;</span><span class="fu">:</span> <span class="dv">16</span><span class="fu">,</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;buffer_font_size&quot;</span><span class="fu">:</span> <span class="dv">15</span><span class="fu">,</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;theme&quot;</span><span class="fu">:</span> <span class="st">&quot;One Dark&quot;</span><span class="fu">,</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;restore_on_startup&quot;</span><span class="fu">:</span> <span class="st">&quot;last_session&quot;</span><span class="fu">,</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;session&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;restore_unsaved_buffers&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;lsp&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">Markdownlint</span> <span class="er">settings</span> <span class="er">to</span> <span class="er">remove</span> <span class="er">warnings</span> <span class="er">regarding</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span>  <span class="er">line-length,</span> <span class="er">raw</span> <span class="er">HTML</span> <span class="er">tags,</span> <span class="er">and</span> <span class="er">supress</span> <span class="er">warnings</span> <span class="er">about</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span>  <span class="er">missing</span> <span class="er">top</span> <span class="er">level</span> <span class="er">headers.</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;markdownlint&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;settings&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;MD013&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;MD033&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;MD041&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;tinymist&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;initialization_options&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;preview&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;enabled&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>          <span class="fu">},</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>        <span class="fu">},</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;settings&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;exportPdf&quot;</span><span class="fu">:</span> <span class="st">&quot;onSave&quot;</span><span class="fu">,</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;outputPath&quot;</span><span class="fu">:</span> <span class="st">&quot;$root/$name&quot;</span><span class="fu">,</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;formatterMode&quot;</span><span class="fu">:</span> <span class="st">&quot;typstyle&quot;</span><span class="fu">,</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;lint&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;enabled&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;when&quot;</span><span class="fu">:</span> <span class="st">&quot;onSave&quot;</span><span class="fu">,</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">},</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  <span class="er">//</span> <span class="er">Disable</span> <span class="er">telemetry.</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;telemetry&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;diagnostics&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;metrics&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;languages&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">Python</span> <span class="er">linting</span> <span class="er">settings</span> <span class="er">for</span> <span class="er">ruff.</span> <span class="er">To</span> <span class="er">turn</span> <span class="er">off</span> <span class="er">the</span> <span class="er">auto-corrections,</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>    <span class="er">//</span> <span class="er">remove</span> <span class="er">code_action</span> <span class="er">and</span> <span class="er">language_server</span> <span class="er">blocks</span> <span class="er">and</span> <span class="er">turn</span> <span class="er">format_on_save</span> <span class="er">to</span> <span class="er">off.</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Python&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;language_servers&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;basedpyright&quot;</span><span class="ot">,</span> <span class="st">&quot;ruff&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;format_on_save&quot;</span><span class="fu">:</span> <span class="st">&quot;on&quot;</span><span class="fu">,</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;formatter&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;code_action&quot;</span><span class="fu">:</span> <span class="st">&quot;source.organizeImports.ruff&quot;</span><span class="fu">,</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;code_action&quot;</span><span class="fu">:</span> <span class="st">&quot;source.fixAll.ruff&quot;</span><span class="fu">,</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>        <span class="fu">{</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;language_server&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;ruff&quot;</span><span class="fu">,</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>          <span class="fu">},</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>        <span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>      <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Markdown&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;tab_size&quot;</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;hard_tabs&quot;</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;Typst&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;language_servers&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;tinymist&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;formatter&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&quot;language_server&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;tinymist&quot;</span><span class="fu">,</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>        <span class="fu">},</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>      <span class="fu">},</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&quot;format_on_save&quot;</span><span class="fu">:</span> <span class="st">&quot;on&quot;</span><span class="fu">,</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+</section>
+<section id="section-13" class="level3">
+<h3>14</h3>
+<ul>
+<li>Install Rclone in user space as a standalone binary (avoids layering software on the host).</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://downloads.rclone.org/rclone-current-linux-amd64.zip</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> rclone-current-linux-amd64.zip</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> rclone-v<span class="pp">*</span>-linux-amd64</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> rclone ~/.local/bin/</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> rclone-current-linux-amd64.zip rclone-v<span class="pp">*</span>-linux-amd64</span></code></pre></div>
+</section>
+<section id="section-14" class="level3">
+<h3>15</h3>
+<p>Set up Rclone for WebDAV access. * <code>rclone config</code> * <code>n</code> for new remote * Name the remote * <code>webdav</code> storage type * Enter WebDAV URL, username, and password</p>
+</section>
+<section id="section-15" class="level3">
+<h3>16</h3>
+<ul>
+<li>Install KeePassXC using Flatpak.</li>
+</ul>
+<p><em>Note: KeePassXC is a password manager application using KeePass. I can set it up to sync with a WebDAV on my VPS. There is an iPhone app called KeePassium that also uses KeePass, and it syncs with the same WebDAV folder on my server. On desktop, I have a bash script that must be run prior to using KeePassXC. It syncs a local copy of the KeePass database with the WebDAV server. KeePassium also keeps an offline copy. KeePassXC runs on Windows as well, but I have not set it up to sync with the WebDAV server, so I am not using it.</em></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.keepassxc.KeePassXC</span></code></pre></div>
+</section>
+<section id="section-16" class="level3">
+<h3>17</h3>
+<ul>
+<li>Create a directory in your writable <code>/home</code> partition for WebDAV use.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/webdav/keepass</span></code></pre></div>
+</section>
+<section id="section-17" class="level3">
+<h3>18</h3>
+<ul>
+<li>Test mounting the WebDAV folder:</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> mount jmbsquared_keepass: ~/webdav/keepass <span class="dt">\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>--vfs-cache-mode full <span class="dt">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>--exclude <span class="st">&quot;.*&quot;</span></span></code></pre></div>
+</section>
+<section id="section-18" class="level3">
+<h3>19</h3>
+<ul>
+<li>Create the synchronization script <code>~/.local/bin/keepass_sync.sh</code> (unchanged, as <code>/home</code> paths remain writable).</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="va">LOCAL_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/webdav/keepass&quot;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="va">REMOTE_NAME</span><span class="op">=</span><span class="st">&quot;jmbsquared_keepass:&quot;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="va">LOG_FILE</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/.cache/rclone/keepass_sync_log.txt&quot;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Safety Check</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">!</span> <span class="ot">-f</span> <span class="st">&quot;</span><span class="va">$LOCAL_DIR</span><span class="st">/RCLONE_TEST&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;ERROR: Safety marker RCLONE_TEST not found in </span><span class="va">$LOCAL_DIR</span><span class="st">&quot;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">read</span> <span class="at">-p</span> <span class="st">&quot;Press enter to exit...&quot;</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Starting KeePass Sync...&quot;</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="co"># STEP 1: Pull from Server to Local</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a><span class="co"># --update: Only copy if the source (remote) is newer than the destination (local)</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># --exclude: Strictly ignore the .ht files to avoid 403 errors</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Checking for server updates...&quot;</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> copy <span class="st">&quot;</span><span class="va">$REMOTE_NAME</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$LOCAL_DIR</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">--update</span> <span class="dt">\</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">--modify-window</span> 10s <span class="dt">\</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">--exclude</span> <span class="st">&quot;.ht*&quot;</span> <span class="dt">\</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">--verbose</span> <span class="at">--log-file</span><span class="op">=</span><span class="va">$LOG_FILE</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="co"># STEP 2: Push from Local to Server</span></span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="co"># --update: Only copy if the local file is newer than the server file</span></span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Uploading local changes...&quot;</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> copy <span class="st">&quot;</span><span class="va">$LOCAL_DIR</span><span class="st">&quot;</span> <span class="st">&quot;</span><span class="va">$REMOTE_NAME</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">--update</span> <span class="dt">\</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">--modify-window</span> 10s <span class="dt">\</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">--exclude</span> <span class="st">&quot;.ht*&quot;</span> <span class="dt">\</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">--verbose</span> <span class="at">--log-file</span><span class="op">=</span><span class="va">$LOG_FILE</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="bu">read</span> <span class="at">-n</span> 1 <span class="at">-s</span> <span class="at">-r</span> <span class="at">-p</span> <span class="st">&quot;Sync Complete. Press any key to close this window...&quot;</span></span></code></pre></div>
+<ul>
+<li>Make it executable:</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ~/.local/bin/keepass_sync.sh</span></code></pre></div>
+<ul>
+<li>Create the desktop shortcut launcher in <code>~/.local/share/applications/keepass_sync.desktop</code>:</li>
+</ul>
+<pre><code>[Desktop Entry]
+Type=Application
+Version=1.0
+Name=KeePass_Sync
+Comment=Sync database with WebDAV and Launch KeePassXC
+Exec=/home/bonju/.local/bin/keepass_sync.sh
+Icon=utilities-terminal
+Terminal=true
+StartupNotify=false
+Categories=Utility;Security;</code></pre>
+</section>
+<section id="section-19" class="level3">
+<h3>20</h3>
+<ul>
+<li>Install Pandoc as a standalone user-space binary to avoid pulling in hundreds of megabytes of Haskell system dependencies on your host.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download, extract, and copy the binary to ~/.local/bin</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-linux-amd64.tar.gz</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzf</span> pandoc-3.1.11.1-linux-amd64.tar.gz</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> pandoc-3.1.11.1/bin/pandoc ~/.local/bin/</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> pandoc-3.1.11.1<span class="pp">*</span></span></code></pre></div>
+</section>
+<section id="section-20" class="level3">
+<h3>21</h3>
+<ul>
+<li>Install KaTeX in your user space. Because we are using <code>fnm</code> for Node.js, this will sit cleanly within your user profile directory.</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install katex <span class="at">--prefix</span> ~/.local/share</span></code></pre></div>
+</section>
+<section id="section-21" class="level3">
+<h3>22</h3>
+<ul>
+<li>Install Libertinus and Stix Two fonts at the user level to <code>~/.local/share/fonts/</code> (system-wide font directories are read-only).</li>
+</ul>
+</section>
+<section id="section-22" class="level3">
+<h3>23</h3>
+<ul>
+<li>Install StatiCrypt using npm (managed automatically by <code>fnm</code>’s user-space environment).</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> staticrypt</span></code></pre></div>
+</section>
+<section id="section-23" class="level3">
+<h3>24</h3>
+<ul>
+<li>Install Picocrypt via Flatpak.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub io.github.picocrypt_ng.Picocrypt-NG</span></code></pre></div>
+<p><em>(Use Flatseal to adjust directory access permissions as needed).</em></p>
+</section>
+<section id="section-24" class="level3">
+<h3>25</h3>
+<ul>
+<li>Install Kiwix via Flatpak.</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.kiwix.desktop</span></code></pre></div>
+<p><em>(Use Flatseal to expose your <code>.zim</code> database storage directory to the Kiwix sandbox).</em></p>
+</section>
+<section id="section-25" class="level3">
+<h3>26</h3>
+<ul>
+<li>Install Steam via Flatpak.</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub com.valvesoftware.Steam</span></code></pre></div>
+<ul>
+<li><strong>Hardware Controller Integration:</strong> Because Steam is sandboxed in a Flatpak, you must layer the controller hardware integration package on your host system using <code>rpm-ostree</code>. This requires a reboot to take effect.</li>
+</ul>
+<p><em><strong>Note:</strong> I have not installed devices yet…</em></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm-ostree</span> install steam-devices</span></code></pre></div>
+<ul>
+<li>Install ProtonUp-Qt via Flatpak to manage game compatibility layers:</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub net.davidotek.pupgui2</span></code></pre></div>
+</section>
+<section id="section-26" class="level3">
+<h3>27</h3>
+<p>Install Distrobox (a more fully-featured container app than Toolbx) for use when needed.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> https://raw.githubusercontent.com/89luca89/distrobox/main/install <span class="kw">|</span> <span class="fu">sh</span> <span class="at">-s</span> <span class="at">--</span> <span class="at">--prefix</span> ~/.local</span></code></pre></div>
+</section>
+<section id="section-27" class="level3">
+<h3>28</h3>
+<p>Install digiKam via flatpak. Many configuration options must be evaluated and refined to prevent xmp collisions with darktable.</p>
+</section>
+<section id="section-28" class="level3">
+<h3>29</h3>
+<p>Install GIMP and the G’MIC and Resynthesizer plugins.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP <span class="at">-y</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP.Plugin.GMic <span class="at">-y</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP.Plugin.Resynthesizer <span class="at">-y</span></span></code></pre></div>
+<p>Launch GIMP to initialize, then close and install PhotoGIMP</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/Diolinux/PhotoGIMP/archive/refs/heads/master.zip <span class="at">-O</span> photogimp.zip</span></code></pre></div>
+<p>Extract and move the /PhotoGIMP-master directory to ~/.var/app/org.gimp.GIMP.</p>
+</section>
+<section id="section-29" class="level3">
+<h3>30</h3>
+<p>Install darktable via Flatpak</p>
+<p>I used the KDE native application downloader for this one. Darktable also required extensive check of settings to ensure that XMP is never compressed, is created on import, and to look for xmp files on startup. There were more settings, read through and evaluate each very carefully.</p>
+</section>
+<section id="section-30" class="level3">
+<h3>31</h3>
+<p>Install Proton VPN, Proton Mail Bridge and Thunderbird and configure. (Flatpak).</p>
+</section>
+<section id="section-31" class="level3">
+<h3>32</h3>
+<p>Install Pagefind standalone binary in ~/.local/bin</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.local/bin</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://pagefind.app/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
+<p>Test with <code>pagefind --version</code>.</p>
+</section>
+<section id="section-32" class="level3">
+<h3>33</h3>
+<p>Installed Firefox as a Flatpak. This is better than using the default, as the default can lose settings if a GRUB rollback is necessary. It can be installed via the Discover app. Verify it is the one used by default via usual launch method in use.</p>
+<p>Installed basic extensions: <strong>uBlock Origin</strong> and <strong>Firefox Multi-Account Containers</strong>.</p>
+<ul>
+<li><strong>uBlock Origin</strong> is an ad/content blocker and helps prevent trackers and popups.</li>
+<li><strong>Firefox Multi-Account Containers</strong> separates tabs into isolated containers. Websites can be kept in specific containers, and data/cookies/etc. from one container cannot see the others. You can log into separate accounts in different containers for the same service.</li>
+</ul>
+</section>
+</section>
+            </div>
+        </main>
+
+        <footer class="container">
+            <hr />
+            <div class="grid">
+                <div>computer reference, linux, fedora, kinoite</div>
+                <div style="text-align: right">
+                                    </div>
+            </div>
+
+            
+        </footer>
+
+        <dialog id="search-modal">
+            <article style="width: 100%; max-width: 600px">
+                <header>
+                    <button
+                        aria-label="Close"
+                        rel="prev"
+                        id="close-search"
+                    ></button>
+                    <strong>Search Titles & Keywords</strong>
+                </header>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Type to search..."
+                    autocomplete="off"
+                />
+                <ul
+                    id="search-results"
+                    style="list-style: none; padding-left: 0; margin-top: 1rem"
+                ></ul>
+            </article>
+        </dialog>
+    </body>
+</html>

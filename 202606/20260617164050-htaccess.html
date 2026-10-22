@@ -1,0 +1,344 @@
+<!doctype html>
+<html
+    data-theme="light"
+    xmlns="http://www.w3.org/1999/xhtml"
+    >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+                  <meta
+            name="keywords"
+            content="copypasta, computer reference, apache, htaccess"
+        />
+         
+        <title>.htaccess</title>
+
+        <!-- Portable Asset Resolution using relative_root -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../favicon.ico"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../favicon.svg"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="../favicon-96x96.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="../apple-touch-icon.png"
+        />
+        <link rel="manifest" href="../site.webmanifest" />
+
+                <link rel="stylesheet" href="../assets/css/pico.css" />
+                <link rel="stylesheet" href="../assets/css/custom_002.css" />
+                <link rel="stylesheet" href="../assets/katex/katex.min.css" />
+        
+        <script
+            src="../assets/js/pico_pagefind.js"
+            type="module"
+        ></script>
+
+         
+    </head>
+
+    <body>
+        <header class="container site_header">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="brand_text"
+                            ><a
+                                href="https://jmbsquared.com"
+                                style="text-decoration: none"
+                                >JmB²</a
+                            ></span
+                        >
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="../index.html" data-tooltip="Home">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-house-icon lucide-house"
+                            >
+                                <path
+                                    d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+                                />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="open-search" data-tooltip="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search-icon lucide-search"
+                            >
+                                <path d="m21 21-4.34-4.34" />
+                                <circle cx="11" cy="11" r="8" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <details class="dropdown">
+                            <summary role="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+                            <ul>
+                                <li>
+                                    <a
+                                        href="../qsjwbuf/20260602080508.html"
+                                        data-tooltip="Private"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"
+                                        >
+                                            <circle cx="12" cy="16" r="1" />
+                                            <rect
+                                                x="3"
+                                                y="10"
+                                                width="18"
+                                                height="12"
+                                                rx="2"
+                                            />
+                                            <path
+                                                d="M7 10V7a5 5 0 0 1 10 0v3"
+                                            />
+                                        </svg>
+                                    </a>
+                                </li>
+                                                                <li>
+                                    <a href="../Bookmarks.html"
+                                        >Bookmarks</a
+                                    >
+                                </li>
+                                                                <li>
+                                    <a href="../Reminders.html"
+                                        >Reminders</a
+                                    >
+                                </li>
+                                                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </nav>
+            <hr />
+
+            
+        </header>
+
+        <main>
+            <div class="container">
+                <div style="display: none">
+                                        <span data-pagefind-body data-pagefind-meta="title">
+                        .htaccess
+                    </span>
+                                         <span data-pagefind-body data-pagefind-meta="keywords">
+                        copypasta, computer reference, apache, htaccess
+                    </span>
+                                    </div>
+
+                                <header id="title-block-header">
+                    <h1 class="title">.htaccess</h1>
+
+                                          <hr />
+                </header>
+                  <pre><code># =============================================
+# 0. GENERAL SETTINGS
+# =============================================
+AddDefaultCharset UTF-8
+# Redirect to an initial page other than index.html
+# DirectoryIndex 0000_table_of_contents.html index.html
+
+# =============================================
+# 1. SEO &amp; SECURITY: Canonical Domain (Force non-www and HTTPS)
+# =============================================
+RewriteEngine On
+RewriteBase /
+
+# Force non-www:
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Force HTTPS (Proxy-Safe):
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =============================================
+# 2. PERFORMANCE: Compression &amp; Browser Caching
+# =============================================
+&lt;IfModule mod_deflate.c&gt;
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json image/svg+xml
+&lt;/IfModule&gt;
+
+&lt;IfModule mod_expires.c&gt;
+  ExpiresActive On
+  ExpiresDefault                          &quot;access plus 0 seconds&quot;
+  ExpiresByType text/html                 &quot;access plus 0 seconds&quot;
+  
+  # Bumped static assets to 1 year for better Lighthouse/PageSpeed scores
+  ExpiresByType image/x-icon              &quot;access plus 1 year&quot;
+  ExpiresByType image/gif                 &quot;access plus 1 year&quot;
+  ExpiresByType image/png                 &quot;access plus 1 year&quot;
+  ExpiresByType image/jpeg                &quot;access plus 1 year&quot;
+  ExpiresByType image/webp                &quot;access plus 1 year&quot;
+  ExpiresByType image/svg+xml             &quot;access plus 1 year&quot;
+  ExpiresByType font/woff                 &quot;access plus 1 year&quot;
+  ExpiresByType font/woff2                &quot;access plus 1 year&quot;
+  ExpiresByType text/css                  &quot;access plus 1 year&quot;
+  ExpiresByType application/javascript    &quot;access plus 1 year&quot;
+&lt;/IfModule&gt;
+
+# =============================================
+# 3. SECURITY: HTTP Headers &amp; Secure Folders
+# =============================================
+&lt;IfModule mod_headers.c&gt;
+  Header always set X-Frame-Options &quot;SAMEORIGIN&quot;
+  Header always set X-Content-Type-Options &quot;nosniff&quot;
+  Header always set Referrer-Policy &quot;strict-origin-when-cross-origin&quot;
+  
+  # HSTS (Removed includeSubDomains to prevent accidental lockouts)
+  Header always set Strict-Transport-Security &quot;max-age=31536000&quot; env=HTTPS
+  
+  # Content Security Policy (Not necessary for my static website on private VPS...) 
+  # Note: Add a report-uri if you want to capture these reports externally!
+  # Header always set Content-Security-Policy-Report-Only &quot;default-src &#39;self&#39;; script-src &#39;self&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; data:; font-src &#39;self&#39;;&quot;
+  #Header always set Content-Security-Policy &quot;default-src &#39;self&#39;; script-src &#39;self&#39; &#39;wasm-unsafe-eval&#39;; connect-src &#39;self&#39;;&quot;
+  Header always set Content-Security-Policy &quot;default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39; &#39;wasm-unsafe-eval&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39;; connect-src &#39;self&#39;;&quot;
+&lt;/IfModule&gt;
+
+# Password-protect all subdirectories named &quot;secure&quot; only when HTTPS is active
+&lt;If &quot;%{HTTPS} == &#39;on&#39; &amp;&amp; %{REQUEST_URI} =~ m#(^|/)secure(/|$)#i&quot;&gt;
+    AuthType Basic
+    AuthName &quot;Restricted Secure Area&quot;
+    AuthUserFile /home/justinmichaelbonanno/.htpasswd
+    Require user bonju
+&lt;/If&gt;
+&lt;If &quot;%{HTTPS} == &#39;on&#39; &amp;&amp; %{REQUEST_URI} =~ m#(^|/)qsjwbuf(/|$)#i&quot;&gt;
+    AuthType Basic
+    AuthName &quot;Restricted Secure Area&quot;
+    AuthUserFile /home/justinmichaelbonanno/.htpasswd
+    Require user bonju
+&lt;/If&gt;
+&lt;If &quot;%{HTTPS} == &#39;on&#39; &amp;&amp; %{REQUEST_URI} =~ m#(^|/)secure_guest(/|$)#i&quot;&gt;
+    AuthType Basic
+    AuthName &quot;Restricted Secure Area&quot;
+    AuthUserFile /home/justinmichaelbonanno/.htpasswd
+    Require valid-user
+&lt;/If&gt;
+
+# =============================================
+# 4. GENERAL SECURITY &amp; ERROR HANDLING
+# =============================================
+# MultiViews MUST be off for extensionless URL routing to work properly
+Options -Indexes -MultiViews
+
+&lt;FilesMatch &quot;^\.ht&quot;&gt;
+    Require all denied
+&lt;/FilesMatch&gt;
+
+ErrorDocument 401 /401.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 503 /503.html
+
+# =============================================
+# 5. URL AESTHETICS &amp; ROUTING (Internal Rewrites)
+# =============================================
+# Force trailing slash for ACTUAL directories
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+
+# Remove trailing slash from non-directories (prevents 404 on /page/)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# SEO: Redirect /index.html to root /
+RewriteCond %{THE_REQUEST} \s/+(.*?/)?index\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# SEO: Redirect /page.html directly to /page
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# INTERNAL: Allow accessing /page by serving /page.html silently
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]</code></pre>
+            </div>
+        </main>
+
+        <footer class="container">
+            <hr />
+            <div class="grid">
+                <div>copypasta, computer reference, apache, htaccess</div>
+                <div style="text-align: right">
+                                    </div>
+            </div>
+
+            
+        </footer>
+
+        <dialog id="search-modal">
+            <article style="width: 100%; max-width: 600px">
+                <header>
+                    <button
+                        aria-label="Close"
+                        rel="prev"
+                        id="close-search"
+                    ></button>
+                    <strong>Search Titles & Keywords</strong>
+                </header>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Type to search..."
+                    autocomplete="off"
+                />
+                <ul
+                    id="search-results"
+                    style="list-style: none; padding-left: 0; margin-top: 1rem"
+                ></ul>
+            </article>
+        </dialog>
+    </body>
+</html>
