@@ -181,59 +181,60 @@ math[display="block"] {
     display: block;
 }
 
-/* Ensure the dropdown container is the positioning context */
-nav details.dropdown {
-    position: relative;
-    display: inline-block; /* Changed from inline to ensure block-like constraints */
-    border: none;
-}
+/* --- Consolidated Dropdown Reset --- */
 
-/* Align the dropdown menu flush with the right edge of the button */
-nav details.dropdown > summary + ul {
-    width: max-content;
-    min-width: 25ch;
-    left: auto; /* Unset the default left: 0 */
-    right: 0; /* Anchor to the right edge of the parent */
-}
-
-/* 1. Reset the details wrapper to prevent layout shifts */
+/* 1. Force-remove the component box (border, background, shadow) */
 nav details.dropdown.link-dropdown {
-    border: none;
-    background: transparent;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+    border: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    box-shadow: none !important;
 }
 
-/* 2. Make the summary behave exactly like an <a> tag */
-details.link-dropdown summary {
-    display: flex;           /* Aligns SVG centrally */
+/* 2. Reset the summary to behave as a transparent trigger */
+nav details.dropdown.link-dropdown summary {
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    list-style: none;        /* Removes default arrow */
+    list-style: none !important;
     cursor: pointer;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: none;
-    color: inherit;          /* Inherits color from the nav link context */
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    color: inherit;
     transition: color var(--pico-transition-duration) var(--pico-transition-timing-function);
 }
 
-/* 3. Remove the webkit marker for Safari/Chrome */
-details.link-dropdown summary::-webkit-details-marker {
-    display: none;
+/* 3. KILL THE CARAT: Target the pseudo-element Pico uses for the arrow */
+nav details.dropdown.link-dropdown summary::after {
+    display: none !important;
+    content: none !important;
 }
 
-/* 4. Match the hover state of the other nav links */
-details.link-dropdown summary:hover {
-    color: var(--pico-primary-hover);
+/* 4. Remove browser-native markers (Safari/Chrome) */
+nav details.dropdown.link-dropdown summary::-webkit-details-marker {
+    display: none !important;
 }
 
-/* 5. Ensure the SVG inside matches the scale and color of the links */
-details.link-dropdown summary svg {
+/* 5. Maintain hover state and SVG behavior */
+nav details.dropdown.link-dropdown summary:hover {
+    color: var(--pico-primary-hover) !important;
+}
+
+nav details.dropdown.link-dropdown summary svg {
     display: block;
-    stroke: currentColor;    /* Ensures the SVG color changes on hover */
+    stroke: currentColor;
+}
+
+/* 6. Position the menu (Keep your existing logic) */
+nav details.dropdown.link-dropdown > summary + ul {
+    width: max-content;
+    min-width: 25ch;
+    left: auto;
+    right: 0;
 }
 
 .brand_text {
