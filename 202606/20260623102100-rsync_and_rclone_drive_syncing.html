@@ -152,64 +152,52 @@
                                          <div class="abstract">Setting up for transfer and synchronization of a portable NVMe M.2 (2 TB) with an internal SATA SSD. Both drives are formatted exFAT. My desktop currently runs Windows and Linux (separate NVMe M.2 drives), and both access and manage files on the SATA SSD, which I use as my personal archive.</div>
                                         <hr />
                 </header>
-                                 <!-- Pagefind UI Container -->
-                <input type="search" id="body-search-input" placeholder="Search notes...">
-                <ul id="body-search-results"></ul>
-                <footer style="text-align: right;">
-                <em>by Justin Bonanno</em>
-                </footer>
-                </article>
-                <script>
-                  window.addEventListener('DOMContentLoaded', (event) => {
-                    new PagefindUI({ element: "#search", showSubResults: true });
-                  });
-                </script>
-                <p><strong>WARNING:</strong> Rsync is <strong>one-way only</strong>! This will sync from the internal to the external. It is <strong>not</strong> bidirectional. The order of the drives in the commands provided can be reversed to sync in the other direction, but rsync <strong>cannot</strong> do bidirectional syncing.</p>
-                <p><strong>Objective:</strong> Set up syncing between internal archive SATA SSD with external NMVe M.2 SSD in Fedora Kinoite.</p>
-                <section id="rsync" class="level2">
-                <h2>Rsync</h2>
-                <p>Begin by formatting external drive to exFAT.</p>
-                <p>Due to exFAT formatting, do not use the standard <code>-a</code> archive flag as this includes group/owner/permission flags, which will not work on exFAT.</p>
-                <p>Ensure both drives are mounted.</p>
-                <p>Try:</p>
-                <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rtvhi</span> <span class="at">--modify-window</span><span class="op">=</span>1 <span class="at">--dry-run</span> /run/media/bonju/SSD/ /run/media/bonju/external2tb/</span></code></pre></div>
-                <ul>
-                <li><strong><code>-r</code>:</strong> Recursive, copies subdirectories and files within.</li>
-                <li><strong><code>-t</code>:</strong> Preserve modification times.</li>
-                <li><strong><code>-v</code>:</strong> Verbose, print every filename to the terminal during transfer.</li>
-                <li><strong><code>-h</code>:</strong> Human-readable, format sizes and transfer speeds into easily readable units instead of byte strings.</li>
-                <li><strong><code>--progress</code>:</strong> Display progress and estimate time remaining.</li>
-                <li><strong><code>--i</code>:</strong> Itemized change reasoning, decipherable if needed.</li>
-                <li><strong><code>--modify-window=1</code>:</strong> Linux/macOS record nanosecond timestamps, but Windows exFAT resolution is only 2 seconds. This forces rsync to ignore 1-second timestamp differences.</li>
-                <li><strong><code>--dry-run</code>:</strong> Test-drive, without any actual copying, to preview effect. Delete this when output is correct.</li>
-                </ul>
-                <p>Once the output looks perfect, run:</p>
-                <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rtvhi</span> <span class="at">--modify-window</span><span class="op">=</span>1 /run/media/bonju/SSD/ /run/media/bonju/external2tb/</span></code></pre></div>
-                </section>
-                <section id="rclone" class="level2">
-                <h2>Rclone</h2>
-                <p><strong>Important:</strong> I have not tested this yet.</p>
-                <p>Once the initial sync is complete with <code>rsync</code>, it is viable to do the same thing with rclone, but bidirectionally. This requires an initial run using the <code>--resync</code> flag to initialize the rclone state on the OS as follows:</p>
-                <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> bisync /run/media/bonju/SSD/ /run/media/bonju/external2tb/ <span class="dt">\</span></span>
+                  <p><strong>WARNING:</strong> Rsync is <strong>one-way only</strong>! This will sync from the internal to the external. It is <strong>not</strong> bidirectional. The order of the drives in the commands provided can be reversed to sync in the other direction, but rsync <strong>cannot</strong> do bidirectional syncing.</p>
+<p><strong>Objective:</strong> Set up syncing between internal archive SATA SSD with external NMVe M.2 SSD in Fedora Kinoite.</p>
+<section id="rsync" class="level2">
+<h2>Rsync</h2>
+<p>Begin by formatting external drive to exFAT.</p>
+<p>Due to exFAT formatting, do not use the standard <code>-a</code> archive flag as this includes group/owner/permission flags, which will not work on exFAT.</p>
+<p>Ensure both drives are mounted.</p>
+<p>Try:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rtvhi</span> <span class="at">--modify-window</span><span class="op">=</span>1 <span class="at">--dry-run</span> /run/media/bonju/SSD/ /run/media/bonju/external2tb/</span></code></pre></div>
+<ul>
+<li><strong><code>-r</code>:</strong> Recursive, copies subdirectories and files within.</li>
+<li><strong><code>-t</code>:</strong> Preserve modification times.</li>
+<li><strong><code>-v</code>:</strong> Verbose, print every filename to the terminal during transfer.</li>
+<li><strong><code>-h</code>:</strong> Human-readable, format sizes and transfer speeds into easily readable units instead of byte strings.</li>
+<li><strong><code>--progress</code>:</strong> Display progress and estimate time remaining.</li>
+<li><strong><code>--i</code>:</strong> Itemized change reasoning, decipherable if needed.</li>
+<li><strong><code>--modify-window=1</code>:</strong> Linux/macOS record nanosecond timestamps, but Windows exFAT resolution is only 2 seconds. This forces rsync to ignore 1-second timestamp differences.</li>
+<li><strong><code>--dry-run</code>:</strong> Test-drive, without any actual copying, to preview effect. Delete this when output is correct.</li>
+</ul>
+<p>Once the output looks perfect, run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-rtvhi</span> <span class="at">--modify-window</span><span class="op">=</span>1 /run/media/bonju/SSD/ /run/media/bonju/external2tb/</span></code></pre></div>
+</section>
+<section id="rclone" class="level2">
+<h2>Rclone</h2>
+<p><strong>Important:</strong> I have not tested this yet.</p>
+<p>Once the initial sync is complete with <code>rsync</code>, it is viable to do the same thing with rclone, but bidirectionally. This requires an initial run using the <code>--resync</code> flag to initialize the rclone state on the OS as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> bisync /run/media/bonju/SSD/ /run/media/bonju/external2tb/ <span class="dt">\</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--modify-window</span> 2s <span class="dt">\</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--verbose</span> <span class="dt">\</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--progress</span> <span class="dt">\</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--resync</span> <span class="dt">\</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--dry-run</span></span></code></pre></div>
-                <p>Following the initialization, the command can be altered to:</p>
-                <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> bisync /run/media/bonju/SSD/ /run/media/bonju/external2tb/ <span class="dt">\</span></span>
+<p>Following the initialization, the command can be altered to:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> bisync /run/media/bonju/SSD/ /run/media/bonju/external2tb/ <span class="dt">\</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--modify-window</span> 2s <span class="dt">\</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--verbose</span> <span class="dt">\</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--progress</span> <span class="dt">\</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--check-access</span> <span class="dt">\</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--conflict-resolve</span> newer <span class="dt">\</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--dry-run</span></span></code></pre></div>
-                <p><em>In the above examples, remove the <code>--dry-run</code> once output looks accurate.</em></p>
-                </section>
-                <section id="windows" class="level2">
-                <h2>Windows</h2>
-                <p>Rclone will also work from Windows, if installed. The file paths will need to be changed appropriately to Windows format (though Rclone can use forward slashes natively), and the <code>--resync</code> command would need to be used for the intitial sync <strong>each time the OS is switched</strong>. Line continuations in Powershell are accomplished with <code>`</code> instead of <code>\</code> as on Linux.</p>
-                </section>
+<p><em>In the above examples, remove the <code>--dry-run</code> once output looks accurate.</em></p>
+</section>
+<section id="windows" class="level2">
+<h2>Windows</h2>
+<p>Rclone will also work from Windows, if installed. The file paths will need to be changed appropriately to Windows format (though Rclone can use forward slashes natively), and the <code>--resync</code> command would need to be used for the intitial sync <strong>each time the OS is switched</strong>. Line continuations in Powershell are accomplished with <code>`</code> instead of <code>\</code> as on Linux.</p>
+</section>
             </div>
         </main>
 

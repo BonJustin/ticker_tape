@@ -167,453 +167,441 @@
                                           <div class="abstract">Testing what Pandoc Markdown can render to HTML with KaTeX… Use <code>$ … $</code> delimiters for inline math, or <code>$$ … $$</code> delimiters for display math. The fonts for KaTeX are not as consistent with the body text as MathML, but the mathematics are much better.</div>
                                         <hr />
                 </header>
-                                 <!-- Pagefind UI Container -->
-                <input type="search" id="body-search-input" placeholder="Search notes...">
-                <ul id="body-search-results"></ul>
-                <footer style="text-align: right;">
-                <em>by Justin Bonanno</em>
-                </footer>
-                </article>
-                <script>
-                  window.addEventListener('DOMContentLoaded', (event) => {
-                    new PagefindUI({ element: "#search", showSubResults: true });
-                  });
-                </script>
-                <section id="top" class="level1">
-                <h1>Contents</h1>
-                <ul>
-                <li><a href="#a">A</a>
-                <ul>
-                <li><a href="#aligned">aligned</a></li>
-                </ul></li>
-                <li><a href="#B">B</a>
-                <ul>
-                <li><a href="#mathbb">blackboard bold (mathbb)</a></li>
-                </ul></li>
-                <li><a href="#c">C</a>
-                <ul>
-                <li><a href="#cdot">centered dot (<span class="math inline">\cdot</span>)</a></li>
-                <li><a href="#cdots">centered dots (<span class="math inline">\cdots</span>)</a></li>
-                </ul></li>
-                <li><a href="#d">D</a>
-                <ul>
-                <li><a href="#degree">degree</a></li>
-                <li><a href="#delimiters">delimiters: () [] {} ||</a></li>
-                <li><a href="#dots">dots (<span class="math inline">\dots</span>)</a></li>
-                </ul></li>
-                <li><a href="#e">E</a>
-                <ul>
-                <li><a href="#dots">ellipsis (<span class="math inline">\dots</span>)</a></li>
-                </ul></li>
-                <li><a href="#f">F</a>
-                <ul>
-                <li><a href="#fractions">fractions</a></li>
-                </ul></li>
-                <li><a href="#i">I</a>
-                <ul>
-                <li><a href="#infinity">infinity (<span class="math inline">\infty</span>)</a></li>
-                </ul></li>
-                <li><a href="#p">P</a>
-                <ul>
-                <li><a href="#pi">pi (<span class="math inline">\pi</span>)</a></li>
-                </ul></li>
-                <li><a href="#r">R</a>
-                <ul>
-                <li><a href="#radicals">radicals</a></li>
-                <li><a href="#relations">relations</a></li>
-                <li><a href="#roman">roman type</a></li>
-                </ul></li>
-                <li><a href="#s">S</a>
-                <ul>
-                <li><a href="#set-notation">set notation</a></li>
-                <li><a href="#subscript">subscript</a></li>
-                <li><a href="#summation">summation</a></li>
-                <li><a href="#superscript">superscript</a></li>
-                </ul></li>
-                <li><a href="#t">T</a>
-                <ul>
-                <li><a href="#times">times (<span class="math inline">\times</span>)</a></li>
-                </ul></li>
-                </ul>
-                <hr />
-                <section id="a" class="level2">
-                <h2>A</h2>
-                <hr />
-                <section id="aligned" class="level3">
-                <h3>aligned</h3>
-                <p><em>Align equations… each line of the equation will align on <code>&amp;</code>, and new lines are created with <code>\\</code>.</em></p>
-                <pre><code>\begin{aligned}
+                  <section id="top" class="level1">
+<h1>Contents</h1>
+<ul>
+<li><a href="#a">A</a>
+<ul>
+<li><a href="#aligned">aligned</a></li>
+</ul></li>
+<li><a href="#B">B</a>
+<ul>
+<li><a href="#mathbb">blackboard bold (mathbb)</a></li>
+</ul></li>
+<li><a href="#c">C</a>
+<ul>
+<li><a href="#cdot">centered dot (<span class="math inline">\cdot</span>)</a></li>
+<li><a href="#cdots">centered dots (<span class="math inline">\cdots</span>)</a></li>
+</ul></li>
+<li><a href="#d">D</a>
+<ul>
+<li><a href="#degree">degree</a></li>
+<li><a href="#delimiters">delimiters: () [] {} ||</a></li>
+<li><a href="#dots">dots (<span class="math inline">\dots</span>)</a></li>
+</ul></li>
+<li><a href="#e">E</a>
+<ul>
+<li><a href="#dots">ellipsis (<span class="math inline">\dots</span>)</a></li>
+</ul></li>
+<li><a href="#f">F</a>
+<ul>
+<li><a href="#fractions">fractions</a></li>
+</ul></li>
+<li><a href="#i">I</a>
+<ul>
+<li><a href="#infinity">infinity (<span class="math inline">\infty</span>)</a></li>
+</ul></li>
+<li><a href="#p">P</a>
+<ul>
+<li><a href="#pi">pi (<span class="math inline">\pi</span>)</a></li>
+</ul></li>
+<li><a href="#r">R</a>
+<ul>
+<li><a href="#radicals">radicals</a></li>
+<li><a href="#relations">relations</a></li>
+<li><a href="#roman">roman type</a></li>
+</ul></li>
+<li><a href="#s">S</a>
+<ul>
+<li><a href="#set-notation">set notation</a></li>
+<li><a href="#subscript">subscript</a></li>
+<li><a href="#summation">summation</a></li>
+<li><a href="#superscript">superscript</a></li>
+</ul></li>
+<li><a href="#t">T</a>
+<ul>
+<li><a href="#times">times (<span class="math inline">\times</span>)</a></li>
+</ul></li>
+</ul>
+<hr />
+<section id="a" class="level2">
+<h2>A</h2>
+<hr />
+<section id="aligned" class="level3">
+<h3>aligned</h3>
+<p><em>Align equations… each line of the equation will align on <code>&amp;</code>, and new lines are created with <code>\\</code>.</em></p>
+<pre><code>\begin{aligned}
 a - (b + c) &amp;= a + (-1)(b + c)\\
 &amp;= a + (-1)b + (-1)c\\
 &amp;= a - b - c
 \end{aligned}</code></pre>
-                <p><span class="math display">
-                \begin{aligned}
-                a - (b + c) &amp;= a + (-1)(b + c)\\
-                &amp;= a + (-1)b + (-1)c\\
-                &amp;= a - b - c
-                \end{aligned}
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="b" class="level2">
-                <h2>B</h2>
-                <hr />
-                <section id="mathbb" class="level3">
-                <h3>blackboard bold (mathbb)</h3>
-                <p><em>Commonly used in set notation.</em></p>
-                <pre><code>\mathbb{R}, \mathbb{Z}</code></pre>
-                <p><span class="math display">
-                \mathbb{R}, \mathbb{Z}
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="c" class="level2">
-                <h2>C</h2>
-                <hr />
-                <section id="cdot" class="level3">
-                <h3>centered dot (<span class="math inline">\cdot</span>)</h3>
-                <pre><code>x \cdot y</code></pre>
-                <p><span class="math display">x \cdot y</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="cdots" class="level3">
-                <h3>centered dots (<span class="math inline">\cdots</span>)</h3>
-                <pre><code>a_1 + \cdots + a_n</code></pre>
-                <p><span class="math display">a_1 + \cdots + a_n</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="d" class="level2">
-                <h2>D</h2>
-                <hr />
-                <section id="degree" class="level3">
-                <h3>degree</h3>
-                <p><em>Use Unicode for these outside of mathematics contexts.</em></p>
-                <pre><code>^\circ</code></pre>
-                <p><span class="math display">
-                ^\circ
-                </span></p>
-                <pre><code>^\circ\mathrm{C}</code></pre>
-                <p><span class="math display">
-                ^\circ\mathrm{C}
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="delimiters" class="level3">
-                <h3>delimiters <span class="math inline">\left( \right) \left[ \right] \left\lbrace \right\rbrace \left| \right|</span></h3>
-                <p><em>This type of delimiter (i.e. parenthesis, brackets, braces, bars) scales to the size of the contents.</em></p>
-                <pre><code>\left(\frac{x}{y}\right)</code></pre>
-                <p><span class="math display">
-                \left(\frac{x}{y}\right)
-                </span></p>
-                <pre><code>\left[ \frac{x}{y} \right]</code></pre>
-                <p><span class="math display">
-                \left[ \frac{x}{y} \right]
-                </span></p>
-                <pre><code>\left\lbrace \frac{x}{y} \right\rbrace</code></pre>
-                <p><span class="math display">
-                \left\lbrace \frac{x}{y} \right\rbrace
-                </span></p>
-                <pre><code>\left| \frac{x}{y} \right|</code></pre>
-                <p><span class="math display">
-                \left| \frac{x}{y} \right|
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="dots" class="level3">
-                <h3>dots/ellipsis (<span class="math inline">\dots</span>)</h3>
-                <pre><code>\{a_1, a_2, \dots\}</code></pre>
-                <p><span class="math display">\{a_1, a_2, \dots\}</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="f" class="level2">
-                <h2>F</h2>
-                <hr />
-                <section id="fractions" class="level3">
-                <h3>fractions</h3>
-                <pre><code>\frac{x}{y}</code></pre>
-                <p><span class="math display">\frac{x}{y}</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="i" class="level2">
-                <h2>I</h2>
-                <hr />
-                <section id="infinity" class="level3">
-                <h3>infinity (<span class="math inline">\infty</span>)</h3>
-                <pre><code>\infty</code></pre>
-                <p><span class="math display">\infty</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="p" class="level2">
-                <h2>P</h2>
-                <hr />
-                <section id="pi" class="level3">
-                <h3>pi (<span class="math inline">\pi</span>)</h3>
-                <pre><code>\pi</code></pre>
-                <p><span class="math display">\pi</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="r" class="level2">
-                <h2>R</h2>
-                <hr />
-                <section id="radicals" class="level3">
-                <h3>radicals</h3>
-                <pre><code>\begin{aligned}
+<p><span class="math display">
+\begin{aligned}
+a - (b + c) &amp;= a + (-1)(b + c)\\
+&amp;= a + (-1)b + (-1)c\\
+&amp;= a - b - c
+\end{aligned}
+</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="b" class="level2">
+<h2>B</h2>
+<hr />
+<section id="mathbb" class="level3">
+<h3>blackboard bold (mathbb)</h3>
+<p><em>Commonly used in set notation.</em></p>
+<pre><code>\mathbb{R}, \mathbb{Z}</code></pre>
+<p><span class="math display">
+\mathbb{R}, \mathbb{Z}
+</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="c" class="level2">
+<h2>C</h2>
+<hr />
+<section id="cdot" class="level3">
+<h3>centered dot (<span class="math inline">\cdot</span>)</h3>
+<pre><code>x \cdot y</code></pre>
+<p><span class="math display">x \cdot y</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="cdots" class="level3">
+<h3>centered dots (<span class="math inline">\cdots</span>)</h3>
+<pre><code>a_1 + \cdots + a_n</code></pre>
+<p><span class="math display">a_1 + \cdots + a_n</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="d" class="level2">
+<h2>D</h2>
+<hr />
+<section id="degree" class="level3">
+<h3>degree</h3>
+<p><em>Use Unicode for these outside of mathematics contexts.</em></p>
+<pre><code>^\circ</code></pre>
+<p><span class="math display">
+^\circ
+</span></p>
+<pre><code>^\circ\mathrm{C}</code></pre>
+<p><span class="math display">
+^\circ\mathrm{C}
+</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="delimiters" class="level3">
+<h3>delimiters <span class="math inline">\left( \right) \left[ \right] \left\lbrace \right\rbrace \left| \right|</span></h3>
+<p><em>This type of delimiter (i.e. parenthesis, brackets, braces, bars) scales to the size of the contents.</em></p>
+<pre><code>\left(\frac{x}{y}\right)</code></pre>
+<p><span class="math display">
+\left(\frac{x}{y}\right)
+</span></p>
+<pre><code>\left[ \frac{x}{y} \right]</code></pre>
+<p><span class="math display">
+\left[ \frac{x}{y} \right]
+</span></p>
+<pre><code>\left\lbrace \frac{x}{y} \right\rbrace</code></pre>
+<p><span class="math display">
+\left\lbrace \frac{x}{y} \right\rbrace
+</span></p>
+<pre><code>\left| \frac{x}{y} \right|</code></pre>
+<p><span class="math display">
+\left| \frac{x}{y} \right|
+</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="dots" class="level3">
+<h3>dots/ellipsis (<span class="math inline">\dots</span>)</h3>
+<pre><code>\{a_1, a_2, \dots\}</code></pre>
+<p><span class="math display">\{a_1, a_2, \dots\}</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="f" class="level2">
+<h2>F</h2>
+<hr />
+<section id="fractions" class="level3">
+<h3>fractions</h3>
+<pre><code>\frac{x}{y}</code></pre>
+<p><span class="math display">\frac{x}{y}</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="i" class="level2">
+<h2>I</h2>
+<hr />
+<section id="infinity" class="level3">
+<h3>infinity (<span class="math inline">\infty</span>)</h3>
+<pre><code>\infty</code></pre>
+<p><span class="math display">\infty</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="p" class="level2">
+<h2>P</h2>
+<hr />
+<section id="pi" class="level3">
+<h3>pi (<span class="math inline">\pi</span>)</h3>
+<pre><code>\pi</code></pre>
+<p><span class="math display">\pi</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="r" class="level2">
+<h2>R</h2>
+<hr />
+<section id="radicals" class="level3">
+<h3>radicals</h3>
+<pre><code>\begin{aligned}
 \sqrt{ab} &amp;= \sqrt{a} \cdot \sqrt{b} \\
 \sqrt{\frac{a}{b}} &amp;= \frac{\sqrt{a}}{\sqrt{b}} \\
 a^{\frac{x}{y}} &amp;= \left(\sqrt[y]{a}\right)^x = \sqrt[y]{a^x}
 \end{aligned}</code></pre>
-                <p><span class="math display">
-                \begin{aligned}
-                \sqrt{ab} &amp;= \sqrt{a} \cdot \sqrt{b} \\
-                \sqrt{\frac{a}{b}} &amp;= \frac{\sqrt{a}}{\sqrt{b}} \\
-                a^{\frac{x}{y}} &amp;= \left(\sqrt[y]{a}\right)^x = \sqrt[y]{a^x}
-                \end{aligned}
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="relations" class="level3">
-                <h3>relations</h3>
-                <table>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">equal</td>
-                <td style="text-align: center;"><code>=</code></td>
-                <td style="text-align: right;"><span class="math inline">=</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">not equal</td>
-                <td style="text-align: center;"><code>\neq</code></td>
-                <td style="text-align: right;"><span class="math inline">\neq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">less than</td>
-                <td style="text-align: center;"><code>&lt;</code></td>
-                <td style="text-align: right;"><span class="math inline">&lt;</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">greater than</td>
-                <td style="text-align: center;"><code>&gt;</code></td>
-                <td style="text-align: right;"><span class="math inline">&gt;</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">less than or equal</td>
-                <td style="text-align: center;"><code>\leq</code></td>
-                <td style="text-align: right;"><span class="math inline">\leq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">greater than or equal</td>
-                <td style="text-align: center;"><code>\geq</code></td>
-                <td style="text-align: right;"><span class="math inline">\geq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">approximately equal</td>
-                <td style="text-align: center;"><code>\approx</code></td>
-                <td style="text-align: right;"><span class="math inline">\approx</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">asymptomatically equal</td>
-                <td style="text-align: center;"><code>\sim</code></td>
-                <td style="text-align: right;"><span class="math inline">\sim</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">identical/congruent</td>
-                <td style="text-align: center;"><code>\equiv</code></td>
-                <td style="text-align: right;"><span class="math inline">\equiv</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">congruent (geometry)</td>
-                <td style="text-align: center;"><code>\cong</code></td>
-                <td style="text-align: right;"><span class="math inline">\cong</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">proportional to</td>
-                <td style="text-align: center;"><code>\propto</code></td>
-                <td style="text-align: right;"><span class="math inline">\propto</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">much less than</td>
-                <td style="text-align: center;"><code>\ll</code></td>
-                <td style="text-align: right;"><span class="math inline">\ll</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">much greater than</td>
-                <td style="text-align: center;"><code>\gg</code></td>
-                <td style="text-align: right;"><span class="math inline">\gg</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">defined as</td>
-                <td style="text-align: center;"><code>:=</code></td>
-                <td style="text-align: right;"><span class="math inline">:=</span></td>
-                </tr>
-                </tbody>
-                </table>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="roman" class="level3">
-                <h3>roman type</h3>
-                <p><em>Roman type for use inside inline or display math. Works in a similar manner to <code>\text{}</code>.</em></p>
-                <pre><code>^\circ\mathrm{F}</code></pre>
-                <p><span class="math display">
-                ^\circ\mathrm{F}
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                </section>
-                </section>
-                <section id="s" class="level2">
-                <h2>S</h2>
-                <hr />
-                <section id="set-notation" class="level3">
-                <h3>set notation</h3>
-                <table>
-                <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                </colgroup>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">such that</td>
-                <td style="text-align: right;"><code>\mid</code> or <code>\colon</code></td>
-                <td style="text-align: right;"><span class="math inline">\mid \text{ or } \colon</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">element of</td>
-                <td style="text-align: right;"><code>\in</code></td>
-                <td style="text-align: right;"><span class="math inline">\in</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">not an element of</td>
-                <td style="text-align: right;"><code>\notin</code></td>
-                <td style="text-align: right;"><span class="math inline">\notin</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">subset of</td>
-                <td style="text-align: right;"><code>\subset</code></td>
-                <td style="text-align: right;"><span class="math inline">\subset</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">subset or equal to</td>
-                <td style="text-align: right;"><code>\subseteq</code></td>
-                <td style="text-align: right;"><span class="math inline">\subseteq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">not a subset of</td>
-                <td style="text-align: right;"><code>\not\subset</code> or <code>\not\subseteq</code></td>
-                <td style="text-align: right;"><span class="math inline">\not\subset \text{ or } \not\subseteq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">proper subset</td>
-                <td style="text-align: right;"><code>\subsetneq</code></td>
-                <td style="text-align: right;"><span class="math inline">\subsetneq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">superset of</td>
-                <td style="text-align: right;"><code>\supset</code></td>
-                <td style="text-align: right;"><span class="math inline">\supset</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">superset or equal to</td>
-                <td style="text-align: right;"><code>\supseteq</code></td>
-                <td style="text-align: right;"><span class="math inline">\supseteq</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">intersection</td>
-                <td style="text-align: right;"><code>\cap</code></td>
-                <td style="text-align: right;"><span class="math inline">\cap</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">union</td>
-                <td style="text-align: right;"><code>\cup</code></td>
-                <td style="text-align: right;"><span class="math inline">\cup</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">set difference (minus)</td>
-                <td style="text-align: right;"><code>\setminus</code></td>
-                <td style="text-align: right;"><span class="math inline">\setminus</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">symmetric difference</td>
-                <td style="text-align: right;"><code>\triangle</code></td>
-                <td style="text-align: right;"><span class="math inline">\triangle</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">complement (superscript)</td>
-                <td style="text-align: right;"><code>A^\complement</code></td>
-                <td style="text-align: right;"><span class="math inline">A^\complement</span></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">Cartesian product</td>
-                <td style="text-align: right;"><code>\times</code></td>
-                <td style="text-align: right;"><span class="math inline">\times</span></td>
-                </tr>
-                </tbody>
-                </table>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="subscript" class="level3">
-                <h3>subscript</h3>
-                <pre><code>x_y</code></pre>
-                <p><span class="math display">x_y</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="summation" class="level3">
-                <h3>summation</h3>
-                <pre><code>\sum_{i=1}^{n} a_i</code></pre>
-                <p><span class="math display">
-                \sum_{i=1}^{n} a_i
-                </span></p>
-                <pre><code>\sum\nolimits_{i=1}^{n} a_i</code></pre>
-                <p><span class="math display">
-                \sum\nolimits_{i=1}^{n} a_i
-                </span></p>
-                <pre><code>\sum_{\substack{0 &lt; i &lt; n \\ i \neq j}} a_i</code></pre>
-                <p><span class="math display">
-                \sum_{\substack{0 &lt; i &lt; n \\ i \neq j}} a_i
-                </span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                <section id="superscript" class="level3">
-                <h3>superscript</h3>
-                <pre><code>x^y</code></pre>
-                <p><span class="math display">x^y</span></p>
-                <p><a href="#top">↑ top</a></p>
-                <hr />
-                </section>
-                </section>
-                <section id="t" class="level2">
-                <h2>T</h2>
-                <hr />
-                <section id="times" class="level3">
-                <h3>times (<span class="math inline">\times</span>)</h3>
-                <pre><code>a \times b</code></pre>
-                <p><span class="math display">a \times b</span></p>
-                <p><a href="#top">↑ top</a></p>
-                </section>
-                </section>
-                </section>
+<p><span class="math display">
+\begin{aligned}
+\sqrt{ab} &amp;= \sqrt{a} \cdot \sqrt{b} \\
+\sqrt{\frac{a}{b}} &amp;= \frac{\sqrt{a}}{\sqrt{b}} \\
+a^{\frac{x}{y}} &amp;= \left(\sqrt[y]{a}\right)^x = \sqrt[y]{a^x}
+\end{aligned}
+</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="relations" class="level3">
+<h3>relations</h3>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;">equal</td>
+<td style="text-align: center;"><code>=</code></td>
+<td style="text-align: right;"><span class="math inline">=</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">not equal</td>
+<td style="text-align: center;"><code>\neq</code></td>
+<td style="text-align: right;"><span class="math inline">\neq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">less than</td>
+<td style="text-align: center;"><code>&lt;</code></td>
+<td style="text-align: right;"><span class="math inline">&lt;</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">greater than</td>
+<td style="text-align: center;"><code>&gt;</code></td>
+<td style="text-align: right;"><span class="math inline">&gt;</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">less than or equal</td>
+<td style="text-align: center;"><code>\leq</code></td>
+<td style="text-align: right;"><span class="math inline">\leq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">greater than or equal</td>
+<td style="text-align: center;"><code>\geq</code></td>
+<td style="text-align: right;"><span class="math inline">\geq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">approximately equal</td>
+<td style="text-align: center;"><code>\approx</code></td>
+<td style="text-align: right;"><span class="math inline">\approx</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">asymptomatically equal</td>
+<td style="text-align: center;"><code>\sim</code></td>
+<td style="text-align: right;"><span class="math inline">\sim</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">identical/congruent</td>
+<td style="text-align: center;"><code>\equiv</code></td>
+<td style="text-align: right;"><span class="math inline">\equiv</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">congruent (geometry)</td>
+<td style="text-align: center;"><code>\cong</code></td>
+<td style="text-align: right;"><span class="math inline">\cong</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">proportional to</td>
+<td style="text-align: center;"><code>\propto</code></td>
+<td style="text-align: right;"><span class="math inline">\propto</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">much less than</td>
+<td style="text-align: center;"><code>\ll</code></td>
+<td style="text-align: right;"><span class="math inline">\ll</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">much greater than</td>
+<td style="text-align: center;"><code>\gg</code></td>
+<td style="text-align: right;"><span class="math inline">\gg</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">defined as</td>
+<td style="text-align: center;"><code>:=</code></td>
+<td style="text-align: right;"><span class="math inline">:=</span></td>
+</tr>
+</tbody>
+</table>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="roman" class="level3">
+<h3>roman type</h3>
+<p><em>Roman type for use inside inline or display math. Works in a similar manner to <code>\text{}</code>.</em></p>
+<pre><code>^\circ\mathrm{F}</code></pre>
+<p><span class="math display">
+^\circ\mathrm{F}
+</span></p>
+<p><a href="#top">↑ top</a></p>
+</section>
+</section>
+<section id="s" class="level2">
+<h2>S</h2>
+<hr />
+<section id="set-notation" class="level3">
+<h3>set notation</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="text-align: left;">such that</td>
+<td style="text-align: right;"><code>\mid</code> or <code>\colon</code></td>
+<td style="text-align: right;"><span class="math inline">\mid \text{ or } \colon</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">element of</td>
+<td style="text-align: right;"><code>\in</code></td>
+<td style="text-align: right;"><span class="math inline">\in</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">not an element of</td>
+<td style="text-align: right;"><code>\notin</code></td>
+<td style="text-align: right;"><span class="math inline">\notin</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">subset of</td>
+<td style="text-align: right;"><code>\subset</code></td>
+<td style="text-align: right;"><span class="math inline">\subset</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">subset or equal to</td>
+<td style="text-align: right;"><code>\subseteq</code></td>
+<td style="text-align: right;"><span class="math inline">\subseteq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">not a subset of</td>
+<td style="text-align: right;"><code>\not\subset</code> or <code>\not\subseteq</code></td>
+<td style="text-align: right;"><span class="math inline">\not\subset \text{ or } \not\subseteq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">proper subset</td>
+<td style="text-align: right;"><code>\subsetneq</code></td>
+<td style="text-align: right;"><span class="math inline">\subsetneq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">superset of</td>
+<td style="text-align: right;"><code>\supset</code></td>
+<td style="text-align: right;"><span class="math inline">\supset</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">superset or equal to</td>
+<td style="text-align: right;"><code>\supseteq</code></td>
+<td style="text-align: right;"><span class="math inline">\supseteq</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">intersection</td>
+<td style="text-align: right;"><code>\cap</code></td>
+<td style="text-align: right;"><span class="math inline">\cap</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">union</td>
+<td style="text-align: right;"><code>\cup</code></td>
+<td style="text-align: right;"><span class="math inline">\cup</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">set difference (minus)</td>
+<td style="text-align: right;"><code>\setminus</code></td>
+<td style="text-align: right;"><span class="math inline">\setminus</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">symmetric difference</td>
+<td style="text-align: right;"><code>\triangle</code></td>
+<td style="text-align: right;"><span class="math inline">\triangle</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">complement (superscript)</td>
+<td style="text-align: right;"><code>A^\complement</code></td>
+<td style="text-align: right;"><span class="math inline">A^\complement</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cartesian product</td>
+<td style="text-align: right;"><code>\times</code></td>
+<td style="text-align: right;"><span class="math inline">\times</span></td>
+</tr>
+</tbody>
+</table>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="subscript" class="level3">
+<h3>subscript</h3>
+<pre><code>x_y</code></pre>
+<p><span class="math display">x_y</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="summation" class="level3">
+<h3>summation</h3>
+<pre><code>\sum_{i=1}^{n} a_i</code></pre>
+<p><span class="math display">
+\sum_{i=1}^{n} a_i
+</span></p>
+<pre><code>\sum\nolimits_{i=1}^{n} a_i</code></pre>
+<p><span class="math display">
+\sum\nolimits_{i=1}^{n} a_i
+</span></p>
+<pre><code>\sum_{\substack{0 &lt; i &lt; n \\ i \neq j}} a_i</code></pre>
+<p><span class="math display">
+\sum_{\substack{0 &lt; i &lt; n \\ i \neq j}} a_i
+</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+<section id="superscript" class="level3">
+<h3>superscript</h3>
+<pre><code>x^y</code></pre>
+<p><span class="math display">x^y</span></p>
+<p><a href="#top">↑ top</a></p>
+<hr />
+</section>
+</section>
+<section id="t" class="level2">
+<h2>T</h2>
+<hr />
+<section id="times" class="level3">
+<h3>times (<span class="math inline">\times</span>)</h3>
+<pre><code>a \times b</code></pre>
+<p><span class="math display">a \times b</span></p>
+<p><a href="#top">↑ top</a></p>
+</section>
+</section>
+</section>
             </div>
         </main>
 

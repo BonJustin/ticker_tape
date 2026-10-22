@@ -151,223 +151,211 @@
                                           <div class="abstract">EDTF Library of Congress Extended Date/Time Format is a timestamp format specifically for archival work.</div>
                                         <hr />
                 </header>
-                                 <!-- Pagefind UI Container -->
-                <input type="search" id="body-search-input" placeholder="Search notes...">
-                <ul id="body-search-results"></ul>
-                <footer style="text-align: right;">
-                <em>by Justin Bonanno</em>
-                </footer>
-                </article>
-                <script>
-                  window.addEventListener('DOMContentLoaded', (event) => {
-                    new PagefindUI({ element: "#search", showSubResults: true });
-                  });
-                </script>
-                <p><em>EDTF = <a href="https://www.loc.gov/standards/datetime/">Library of Congress Extended Date/Time Format</a> = ISO 8601-2.</em></p>
-                <section id="level-1-resolution" class="level1">
-                <h1>Level 1: Resolution</h1>
-                <table>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“Sometime in 1999”</td>
-                <td style="text-align: left;">1999</td>
-                <td style="text-align: left;">Only the year is known.</td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Sometime in October of 1999”</td>
-                <td style="text-align: left;">1999-10</td>
-                <td style="text-align: left;">Year and month known.</td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Sometime on October 19, 1999”</td>
-                <td style="text-align: left;">1999-10-19</td>
-                <td style="text-align: left;">Full date known.</td>
-                </tr>
-                </tbody>
-                </table>
-                <hr />
-                </section>
-                <section id="level-2-fuzziness" class="level1">
-                <h1>Level 2: Fuzziness</h1>
-                <section id="tilde-for-approximation" class="level2">
-                <h2>Tilde (~) for Approximation</h2>
-                <table>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“Approximately 1999”</td>
-                <td style="text-align: left;">1999~</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Approximately October 1999</td>
-                <td style="text-align: left;">1999-10~</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Approximately 19 October 1999</td>
-                <td style="text-align: left;">1999-10-19~</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                </tbody>
-                </table>
-                </section>
-                <section id="question-mark-for-uncertainty" class="level2">
-                <h2>Question Mark (?) for Uncertainty</h2>
-                <table>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“Possibly 1999”</td>
-                <td style="text-align: left;">1999?</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Possibly 19 October 1999”</td>
-                <td style="text-align: left;">1999-10-19?</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                </tbody>
-                </table>
-                </section>
-                </section>
-                <section id="level-3-ranges-boundaries" class="level1">
-                <h1>Level 3: Ranges &amp; Boundaries</h1>
-                <section id="closed-ranges-start-and-end" class="level2">
-                <h2>Closed Ranges (Start and End)</h2>
-                <table>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“Between 1990 and 1995”</td>
-                <td style="text-align: left;">1990/1995</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“From January 1999 to March 1999”</td>
-                <td style="text-align: left;">1999-01/1999-03</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                </tbody>
-                </table>
-                </section>
-                <section id="open-ranges-one-sided" class="level2">
-                <h2>Open Ranges (One-sided)</h2>
-                <table>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“Since 1990”</td>
-                <td style="text-align: left;">1990/</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Until 1990”</td>
-                <td style="text-align: left;">/1995</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                </tbody>
-                </table>
-                </section>
-                </section>
-                <section id="level-4-high-precision" class="level1">
-                <h1>Level 4: High Precision</h1>
-                <section id="precision-time" class="level2">
-                <h2>Precision &amp; Time</h2>
-                <table>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“19 October 1999 at 2:30 PM”</td>
-                <td style="text-align: left;">1999-10-19T14:30:00</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Around 2:30 PM on October 19, 1999”</td>
-                <td style="text-align: left;">1999-10-19T14:30:00~</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                </tbody>
-                </table>
-                </section>
-                </section>
-                <section id="level-5-complexity" class="level1">
-                <h1>Level 5: Complexity</h1>
-                <table>
-                <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                </colgroup>
-                <thead>
-                <tr>
-                <th style="text-align: left;">Description</th>
-                <th style="text-align: left;">EDTF String</th>
-                <th style="text-align: left;">Note</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                <td style="text-align: left;">“Roughly between 1920 and 1925”</td>
-                <td style="text-align: left;">1920~/1925~</td>
-                <td style="text-align: left;">Range with approximation on both ends.</td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Possibly 1940, but definitely in May”</td>
-                <td style="text-align: left;">1940?-05</td>
-                <td style="text-align: left;">Uncertain year with known month.</td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“From around 1950 onwards”</td>
-                <td style="text-align: left;">1950~/</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                <tr>
-                <td style="text-align: left;">“Between October 1999 and November 1999 (approximate)</td>
-                <td style="text-align: left;">1999-10/1999-11~</td>
-                <td style="text-align: left;"></td>
-                </tr>
-                </tbody>
-                </table>
-                <p><em><strong>Note:</strong> the tilde (~) character has functional use in markdown for strikethrough, subscripts, and fenced code blocks, so it may be necessary to use escape characters to control the rendering of tildes when converting between markdown and other formats.</em></p>
-                </section>
+                  <p><em>EDTF = <a href="https://www.loc.gov/standards/datetime/">Library of Congress Extended Date/Time Format</a> = ISO 8601-2.</em></p>
+<section id="level-1-resolution" class="level1">
+<h1>Level 1: Resolution</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“Sometime in 1999”</td>
+<td style="text-align: left;">1999</td>
+<td style="text-align: left;">Only the year is known.</td>
+</tr>
+<tr>
+<td style="text-align: left;">“Sometime in October of 1999”</td>
+<td style="text-align: left;">1999-10</td>
+<td style="text-align: left;">Year and month known.</td>
+</tr>
+<tr>
+<td style="text-align: left;">“Sometime on October 19, 1999”</td>
+<td style="text-align: left;">1999-10-19</td>
+<td style="text-align: left;">Full date known.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+<section id="level-2-fuzziness" class="level1">
+<h1>Level 2: Fuzziness</h1>
+<section id="tilde-for-approximation" class="level2">
+<h2>Tilde (~) for Approximation</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“Approximately 1999”</td>
+<td style="text-align: left;">1999~</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“Approximately October 1999</td>
+<td style="text-align: left;">1999-10~</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“Approximately 19 October 1999</td>
+<td style="text-align: left;">1999-10-19~</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="question-mark-for-uncertainty" class="level2">
+<h2>Question Mark (?) for Uncertainty</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“Possibly 1999”</td>
+<td style="text-align: left;">1999?</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“Possibly 19 October 1999”</td>
+<td style="text-align: left;">1999-10-19?</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="level-3-ranges-boundaries" class="level1">
+<h1>Level 3: Ranges &amp; Boundaries</h1>
+<section id="closed-ranges-start-and-end" class="level2">
+<h2>Closed Ranges (Start and End)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“Between 1990 and 1995”</td>
+<td style="text-align: left;">1990/1995</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“From January 1999 to March 1999”</td>
+<td style="text-align: left;">1999-01/1999-03</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="open-ranges-one-sided" class="level2">
+<h2>Open Ranges (One-sided)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“Since 1990”</td>
+<td style="text-align: left;">1990/</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“Until 1990”</td>
+<td style="text-align: left;">/1995</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="level-4-high-precision" class="level1">
+<h1>Level 4: High Precision</h1>
+<section id="precision-time" class="level2">
+<h2>Precision &amp; Time</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“19 October 1999 at 2:30 PM”</td>
+<td style="text-align: left;">1999-10-19T14:30:00</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“Around 2:30 PM on October 19, 1999”</td>
+<td style="text-align: left;">1999-10-19T14:30:00~</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="level-5-complexity" class="level1">
+<h1>Level 5: Complexity</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">EDTF String</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">“Roughly between 1920 and 1925”</td>
+<td style="text-align: left;">1920~/1925~</td>
+<td style="text-align: left;">Range with approximation on both ends.</td>
+</tr>
+<tr>
+<td style="text-align: left;">“Possibly 1940, but definitely in May”</td>
+<td style="text-align: left;">1940?-05</td>
+<td style="text-align: left;">Uncertain year with known month.</td>
+</tr>
+<tr>
+<td style="text-align: left;">“From around 1950 onwards”</td>
+<td style="text-align: left;">1950~/</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">“Between October 1999 and November 1999 (approximate)</td>
+<td style="text-align: left;">1999-10/1999-11~</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Note:</strong> the tilde (~) character has functional use in markdown for strikethrough, subscripts, and fenced code blocks, so it may be necessary to use escape characters to control the rendering of tildes when converting between markdown and other formats.</em></p>
+</section>
             </div>
         </main>
 

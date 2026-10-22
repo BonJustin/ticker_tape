@@ -151,26 +151,14 @@
                                           <div class="abstract">Notes regarding how to download Python packages for offline availability, without using them in a current project.</div>
                                         <hr />
                 </header>
-                                 <!-- Pagefind UI Container -->
-                <input type="search" id="body-search-input" placeholder="Search notes...">
-                <ul id="body-search-results"></ul>
-                <footer style="text-align: right;">
-                <em>by Justin Bonanno</em>
-                </footer>
-                </article>
-                <script>
-                  window.addEventListener('DOMContentLoaded', (event) => {
-                    new PagefindUI({ element: "#search", showSubResults: true });
-                  });
-                </script>
-                <p>Create a new project folder and navigate to it. My projects are in <code>~/dev</code>.</p>
-                <ul>
-                <li><code>uv init</code> creates a new project in the current working directory.</li>
-                <li><code>uv add requests python_package_name</code> installs the requested packages in <code>~/.cache/uv</code>.</li>
-                </ul>
-                <p>The packages will remain in the cache until running <code>uv cache clean</code> which removes unused packages. Otherwise, requesting them in a new project will use the locally availble packages by default.</p>
-                <p><em>I am not certain how versions will be dealt with, or how the packages interact with different versions of Python.</em></p>
-                <p>The project created to download the packages can be immediately deleted.</p>
+                  <p>Create a new project folder and navigate to it. My projects are in <code>~/dev</code>.</p>
+<ul>
+<li><code>uv init</code> creates a new project in the current working directory.</li>
+<li><code>uv add requests python_package_name</code> installs the requested packages in <code>~/.cache/uv</code>.</li>
+</ul>
+<p>The packages will remain in the cache until running <code>uv cache clean</code> which removes unused packages. Otherwise, requesting them in a new project will use the locally availble packages by default.</p>
+<p><em>I am not certain how versions will be dealt with, or how the packages interact with different versions of Python.</em></p>
+<p>The project created to download the packages can be immediately deleted.</p>
             </div>
         </main>
 

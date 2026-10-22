@@ -152,132 +152,120 @@
                                          <div class="abstract">This is a rough outline of my initial Fedora Kinoite installtion. I have tried to modify it as I alter bits and pieces of the system, though this is proving difficult to keep up with.</div>
                                         <hr />
                 </header>
-                                 <!-- Pagefind UI Container -->
-                <input type="search" id="body-search-input" placeholder="Search notes...">
-                <ul id="body-search-results"></ul>
-                <footer style="text-align: right;">
-                <em>by Justin Bonanno</em>
-                </footer>
-                </article>
-                <script>
-                  window.addEventListener('DOMContentLoaded', (event) => {
-                    new PagefindUI({ element: "#search", showSubResults: true });
-                  });
-                </script>
-                <section id="fedora-on-nvme-m.2" class="level2">
-                <h2>Fedora on NVMe M.2</h2>
-                <p>I recently ordered a new Framework laptop that will be delivered in 3 months. My current desktop runs Windows 11 Pro. My desktop has two internal NVME M.2 drives and a third SATA SSD. The default boot drive is a 4 TB drive. The second NVME M.2 drive is 2 TB and was not in use. The third is a 2 TB SATA SSD used as a data only archive.</p>
-                <p>I want to run the new Framework laptop with Fedora (Linux). I have downloaded and installed Fedora Workstation on the secondary NVME M.2 (2 TB). I want to set up this drive to be fully prepared for installation on the Framework laptop when it arrives.</p>
-                <p>My philosophical purpose is to “digitally decouple” from SaaS where possible but maintain professional grade compute power. I will maintain my Windows 11 Pro environment as migrating to Linux will take significant time and effort.</p>
-                </section>
-                <section id="fedora-version" class="level2">
-                <h2>Fedora version</h2>
-                <p>I have decided to try Kinoite for immutability and security. I will need to review the notes in this plan and alter as needed.</p>
-                </section>
-                <section id="laptop-purposes" class="level2">
-                <h2>Laptop Purposes</h2>
-                <ul>
-                <li>Python development with use of <code>uv</code>
-                <ul>
-                <li>Zed IDE initially. I will consider VS Code later if I am dissatisfied.</li>
-                <li>Beyond the Python standard library, I frequently use openai, matplotlib, numpy, pypandoc, seaborn, and pandas.</li>
-                </ul></li>
-                <li>Photography image archive and editing. I currently use Adobe Photoshop and Bridge, but will be migrating to alternatives.
-                <ul>
-                <li>Currently investigating digiKAM, darktable, rawtherapee, and gimp.</li>
-                </ul></li>
-                <li>Local LLM inference and programming via Python and use via chat with LLaMa.cpp and Hugging Face quantized GGUF or better alternative if one exists. I can prepare the software and download the models prior to receiving the new laptop, but I can’t actually run them as my GPU/CPU/VRAM/RAM profile will be entirely different on the new machine than on my desktop.</li>
-                <li>Moderate gaming via Steam depending on games available in my Steam library.</li>
-                <li>Extensive CLI utility support and scripting. Rclone, 7zip or alternative, Picocrypt, StatiCrypt, Pandoc, Something akin to HWInfo, Veracrypt (or alternative), possibly LaTeX, Typst, etc… pretty sure this implies Node.js among others.)</li>
-                <li>Tor Browser and Onion capacity in addition to Firefox.</li>
-                <li>I carry Tails OS on a flash drive for secure amnesic communications standards, this should work on the new laptop.</li>
-                <li>I want to be very careful about anonymity and security, isolating effects on the OS, and exposure to threat vectors, without disabling my computer function.</li>
-                <li>Kiwix and offline English Wikipedia, extensive OpenStax PDF textbook library.</li>
-                </ul>
-                </section>
-                <section id="implementation-plan" class="level2">
-                <h2>Implementation Plan</h2>
-                <section id="section" class="level3">
-                <h3>1</h3>
-                <ul>
-                <li>Install Fedora (Kinoite) with encryption enabled. I used Fedora Media Writer on Windows to make a bootable USB (16 GB) that installs Kinoite. Kinoite is an atomic/immutable Fedora that uses the KDE Plasma GUI.</li>
-                </ul>
-                </section>
-                <section id="section-1" class="level3">
-                <h3>2</h3>
-                <ul>
-                <li>Update the immutable system image.</li>
-                </ul>
-                <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm-ostree</span> upgrade</span></code></pre></div>
-                <p><em>(Note: If updates are applied, you will need to reboot to slide into the new system deployment).</em></p>
-                </section>
-                <section id="section-2" class="level3">
-                <h3>3</h3>
-                <ul>
-                <li>Ensure Flathub is enabled and install Flatseal for managing sandbox permissions.</li>
-                </ul>
-                <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> remote-add <span class="at">--if-not-exists</span> flathub https://dl.flathub.org/repo/flathub.flatpakrepo</span>
+                  <section id="fedora-on-nvme-m.2" class="level2">
+<h2>Fedora on NVMe M.2</h2>
+<p>I recently ordered a new Framework laptop that will be delivered in 3 months. My current desktop runs Windows 11 Pro. My desktop has two internal NVME M.2 drives and a third SATA SSD. The default boot drive is a 4 TB drive. The second NVME M.2 drive is 2 TB and was not in use. The third is a 2 TB SATA SSD used as a data only archive.</p>
+<p>I want to run the new Framework laptop with Fedora (Linux). I have downloaded and installed Fedora Workstation on the secondary NVME M.2 (2 TB). I want to set up this drive to be fully prepared for installation on the Framework laptop when it arrives.</p>
+<p>My philosophical purpose is to “digitally decouple” from SaaS where possible but maintain professional grade compute power. I will maintain my Windows 11 Pro environment as migrating to Linux will take significant time and effort.</p>
+</section>
+<section id="fedora-version" class="level2">
+<h2>Fedora version</h2>
+<p>I have decided to try Kinoite for immutability and security. I will need to review the notes in this plan and alter as needed.</p>
+</section>
+<section id="laptop-purposes" class="level2">
+<h2>Laptop Purposes</h2>
+<ul>
+<li>Python development with use of <code>uv</code>
+<ul>
+<li>Zed IDE initially. I will consider VS Code later if I am dissatisfied.</li>
+<li>Beyond the Python standard library, I frequently use openai, matplotlib, numpy, pypandoc, seaborn, and pandas.</li>
+</ul></li>
+<li>Photography image archive and editing. I currently use Adobe Photoshop and Bridge, but will be migrating to alternatives.
+<ul>
+<li>Currently investigating digiKAM, darktable, rawtherapee, and gimp.</li>
+</ul></li>
+<li>Local LLM inference and programming via Python and use via chat with LLaMa.cpp and Hugging Face quantized GGUF or better alternative if one exists. I can prepare the software and download the models prior to receiving the new laptop, but I can’t actually run them as my GPU/CPU/VRAM/RAM profile will be entirely different on the new machine than on my desktop.</li>
+<li>Moderate gaming via Steam depending on games available in my Steam library.</li>
+<li>Extensive CLI utility support and scripting. Rclone, 7zip or alternative, Picocrypt, StatiCrypt, Pandoc, Something akin to HWInfo, Veracrypt (or alternative), possibly LaTeX, Typst, etc… pretty sure this implies Node.js among others.)</li>
+<li>Tor Browser and Onion capacity in addition to Firefox.</li>
+<li>I carry Tails OS on a flash drive for secure amnesic communications standards, this should work on the new laptop.</li>
+<li>I want to be very careful about anonymity and security, isolating effects on the OS, and exposure to threat vectors, without disabling my computer function.</li>
+<li>Kiwix and offline English Wikipedia, extensive OpenStax PDF textbook library.</li>
+</ul>
+</section>
+<section id="implementation-plan" class="level2">
+<h2>Implementation Plan</h2>
+<section id="section" class="level3">
+<h3>1</h3>
+<ul>
+<li>Install Fedora (Kinoite) with encryption enabled. I used Fedora Media Writer on Windows to make a bootable USB (16 GB) that installs Kinoite. Kinoite is an atomic/immutable Fedora that uses the KDE Plasma GUI.</li>
+</ul>
+</section>
+<section id="section-1" class="level3">
+<h3>2</h3>
+<ul>
+<li>Update the immutable system image.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm-ostree</span> upgrade</span></code></pre></div>
+<p><em>(Note: If updates are applied, you will need to reboot to slide into the new system deployment).</em></p>
+</section>
+<section id="section-2" class="level3">
+<h3>3</h3>
+<ul>
+<li>Ensure Flathub is enabled and install Flatseal for managing sandbox permissions.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> remote-add <span class="at">--if-not-exists</span> flathub https://dl.flathub.org/repo/flathub.flatpakrepo</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub com.github.tchx84.Flatseal <span class="at">-y</span></span></code></pre></div>
-                </section>
-                <section id="section-3" class="level3">
-                <h3>4</h3>
-                <ul>
-                <li>Install <code>uv</code> (installs cleanly into your writable user space under <code>~/.local/bin</code>).</li>
-                </ul>
-                <div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span>
+</section>
+<section id="section-3" class="level3">
+<h3>4</h3>
+<ul>
+<li>Install <code>uv</code> (installs cleanly into your writable user space under <code>~/.local/bin</code>).</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div>
-                </section>
-                <section id="section-4" class="level3">
-                <h3>5</h3>
-                <ul>
-                <li>Install Python for development (completely isolated from the host).</li>
-                </ul>
-                <div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.14.5</span></code></pre></div>
-                </section>
-                <section id="section-5" class="level3">
-                <h3>6</h3>
-                <p><em>I haven’t needed this yet.</em></p>
-                <ul>
-                <li><strong>Toolbx / Distrobox Considerations:</strong> On Kinoite, you cannot easily install system-level library headers (<code>-devel</code> packages) on the host system. Therefore, if a Python package requires compiling C-extensions and throws errors about missing system headers, you <strong>must</strong> use Toolbx or Distrobox.
-                <ul>
-                <li>Create a development container: <code>toolbox create</code></li>
-                <li>Enter it: <code>toolbox enter</code></li>
-                <li>Install your development libraries inside the container via <code>dnf</code>.</li>
-                </ul></li>
-                </ul>
-                </section>
-                <section id="section-6" class="level3">
-                <h3>7</h3>
-                <ul>
-                <li>Install Zed (installs to user space via <code>~/.local</code>).</li>
-                </ul>
-                <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-f</span> https://zed.dev/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
-                </section>
-                <section id="section-7" class="level3">
-                <h3>8</h3>
-                <ul>
-                <li>Install ruff via <code>uv</code> as a globally available Zed linter.</li>
-                </ul>
-                <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> tool install ruff</span></code></pre></div>
-                </section>
-                <section id="section-8" class="level3">
-                <h3>9</h3>
-                <ul>
-                <li>Install Markdownlint (an extension for Zed).
-                <ol type="1">
-                <li>Command palette <code>Ctrl + Shift + P</code>.</li>
-                <li>Search for <code>zed: extensions</code>.</li>
-                <li>Find <strong>Markdownlint</strong> and click <strong>Install</strong>.</li>
-                </ol></li>
-                </ul>
-                </section>
-                <section id="section-9" class="level3">
-                <h3>10</h3>
-                <ul>
-                <li>Install Node.js via <strong><code>fnm</code></strong> (Fast Node Manager) instead of <code>dnf</code>. This keeps Node.js and all global NPM packages completely inside your user space, removing the need for <code>sudo</code> or global prefix workarounds.</li>
-                </ul>
-                <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install fnm</span></span>
+</section>
+<section id="section-4" class="level3">
+<h3>5</h3>
+<ul>
+<li>Install Python for development (completely isolated from the host).</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.14.5</span></code></pre></div>
+</section>
+<section id="section-5" class="level3">
+<h3>6</h3>
+<p><em>I haven’t needed this yet.</em></p>
+<ul>
+<li><strong>Toolbx / Distrobox Considerations:</strong> On Kinoite, you cannot easily install system-level library headers (<code>-devel</code> packages) on the host system. Therefore, if a Python package requires compiling C-extensions and throws errors about missing system headers, you <strong>must</strong> use Toolbx or Distrobox.
+<ul>
+<li>Create a development container: <code>toolbox create</code></li>
+<li>Enter it: <code>toolbox enter</code></li>
+<li>Install your development libraries inside the container via <code>dnf</code>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-6" class="level3">
+<h3>7</h3>
+<ul>
+<li>Install Zed (installs to user space via <code>~/.local</code>).</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-f</span> https://zed.dev/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
+</section>
+<section id="section-7" class="level3">
+<h3>8</h3>
+<ul>
+<li>Install ruff via <code>uv</code> as a globally available Zed linter.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> tool install ruff</span></code></pre></div>
+</section>
+<section id="section-8" class="level3">
+<h3>9</h3>
+<ul>
+<li>Install Markdownlint (an extension for Zed).
+<ol type="1">
+<li>Command palette <code>Ctrl + Shift + P</code>.</li>
+<li>Search for <code>zed: extensions</code>.</li>
+<li>Find <strong>Markdownlint</strong> and click <strong>Install</strong>.</li>
+</ol></li>
+</ul>
+</section>
+<section id="section-9" class="level3">
+<h3>10</h3>
+<ul>
+<li>Install Node.js via <strong><code>fnm</code></strong> (Fast Node Manager) instead of <code>dnf</code>. This keeps Node.js and all global NPM packages completely inside your user space, removing the need for <code>sudo</code> or global prefix workarounds.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install fnm</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://fnm.vercel.app/install <span class="kw">|</span> <span class="fu">bash</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -286,13 +274,13 @@
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">fnm</span> use lts-latest</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> <span class="at">-v</span></span></code></pre></div>
-                </section>
-                <section id="section-10" class="level3">
-                <h3>11</h3>
-                <ul>
-                <li>Install Typst CLI. Download the precompiled static binary directly to your user space <code>~/.local/bin</code> to keep the host system clean.</li>
-                </ul>
-                <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download, extract, and copy the static binary</span></span>
+</section>
+<section id="section-10" class="level3">
+<h3>11</h3>
+<ul>
+<li>Install Typst CLI. Download the precompiled static binary directly to your user space <code>~/.local/bin</code> to keep the host system clean.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download, extract, and copy the static binary</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure your user-space bin directory exists</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.local/bin</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -307,19 +295,19 @@
 <span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up downloaded files</span></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> typst-x86_64-unknown-linux-musl<span class="pp">*</span></span></code></pre></div>
-                </section>
-                <section id="section-11" class="level3">
-                <h3>12</h3>
-                <ul>
-                <li>Install the Typst extension for Zed.</li>
-                </ul>
-                </section>
-                <section id="section-12" class="level3">
-                <h3>13</h3>
-                <ul>
-                <li>Zed <code>settings.json</code> configuration</li>
-                </ul>
-                <div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">Zed</span> <span class="er">settings</span></span>
+</section>
+<section id="section-11" class="level3">
+<h3>12</h3>
+<ul>
+<li>Install the Typst extension for Zed.</li>
+</ul>
+</section>
+<section id="section-12" class="level3">
+<h3>13</h3>
+<ul>
+<li>Zed <code>settings.json</code> configuration</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">Zed</span> <span class="er">settings</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="er">//</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">For</span> <span class="er">information</span> <span class="er">on</span> <span class="er">how</span> <span class="er">to</span> <span class="er">configure</span> <span class="er">Zed,</span> <span class="er">see</span> <span class="er">the</span> <span class="er">Zed</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="er">//</span> <span class="er">documentation:</span> <span class="er">https://zed.dev/docs/configuring-zed</span></span>
@@ -412,53 +400,53 @@
 <span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>    <span class="fu">},</span></span>
 <span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
 <span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
-                </section>
-                <section id="section-13" class="level3">
-                <h3>14</h3>
-                <ul>
-                <li>Install Rclone in user space as a standalone binary (avoids layering software on the host).</li>
-                </ul>
-                <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://downloads.rclone.org/rclone-current-linux-amd64.zip</span>
+</section>
+<section id="section-13" class="level3">
+<h3>14</h3>
+<ul>
+<li>Install Rclone in user space as a standalone binary (avoids layering software on the host).</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://downloads.rclone.org/rclone-current-linux-amd64.zip</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> rclone-current-linux-amd64.zip</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> rclone-v<span class="pp">*</span>-linux-amd64</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> rclone ~/.local/bin/</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> rclone-current-linux-amd64.zip rclone-v<span class="pp">*</span>-linux-amd64</span></code></pre></div>
-                </section>
-                <section id="section-14" class="level3">
-                <h3>15</h3>
-                <p>Set up Rclone for WebDAV access. * <code>rclone config</code> * <code>n</code> for new remote * Name the remote * <code>webdav</code> storage type * Enter WebDAV URL, username, and password</p>
-                </section>
-                <section id="section-15" class="level3">
-                <h3>16</h3>
-                <ul>
-                <li>Install KeePassXC using Flatpak.</li>
-                </ul>
-                <p><em>Note: KeePassXC is a password manager application using KeePass. I can set it up to sync with a WebDAV on my VPS. There is an iPhone app called KeePassium that also uses KeePass, and it syncs with the same WebDAV folder on my server. On desktop, I have a bash script that must be run prior to using KeePassXC. It syncs a local copy of the KeePass database with the WebDAV server. KeePassium also keeps an offline copy. KeePassXC runs on Windows as well, but I have not set it up to sync with the WebDAV server, so I am not using it.</em></p>
-                <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.keepassxc.KeePassXC</span></code></pre></div>
-                </section>
-                <section id="section-16" class="level3">
-                <h3>17</h3>
-                <ul>
-                <li>Create a directory in your writable <code>/home</code> partition for WebDAV use.</li>
-                </ul>
-                <div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/webdav/keepass</span></code></pre></div>
-                </section>
-                <section id="section-17" class="level3">
-                <h3>18</h3>
-                <ul>
-                <li>Test mounting the WebDAV folder:</li>
-                </ul>
-                <div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> mount jmbsquared_keepass: ~/webdav/keepass <span class="dt">\</span></span>
+</section>
+<section id="section-14" class="level3">
+<h3>15</h3>
+<p>Set up Rclone for WebDAV access. * <code>rclone config</code> * <code>n</code> for new remote * Name the remote * <code>webdav</code> storage type * Enter WebDAV URL, username, and password</p>
+</section>
+<section id="section-15" class="level3">
+<h3>16</h3>
+<ul>
+<li>Install KeePassXC using Flatpak.</li>
+</ul>
+<p><em>Note: KeePassXC is a password manager application using KeePass. I can set it up to sync with a WebDAV on my VPS. There is an iPhone app called KeePassium that also uses KeePass, and it syncs with the same WebDAV folder on my server. On desktop, I have a bash script that must be run prior to using KeePassXC. It syncs a local copy of the KeePass database with the WebDAV server. KeePassium also keeps an offline copy. KeePassXC runs on Windows as well, but I have not set it up to sync with the WebDAV server, so I am not using it.</em></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.keepassxc.KeePassXC</span></code></pre></div>
+</section>
+<section id="section-16" class="level3">
+<h3>17</h3>
+<ul>
+<li>Create a directory in your writable <code>/home</code> partition for WebDAV use.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/webdav/keepass</span></code></pre></div>
+</section>
+<section id="section-17" class="level3">
+<h3>18</h3>
+<ul>
+<li>Test mounting the WebDAV folder:</li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rclone</span> mount jmbsquared_keepass: ~/webdav/keepass <span class="dt">\</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>--vfs-cache-mode full <span class="dt">\</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>--exclude <span class="st">&quot;.*&quot;</span></span></code></pre></div>
-                </section>
-                <section id="section-18" class="level3">
-                <h3>19</h3>
-                <ul>
-                <li>Create the synchronization script <code>~/.local/bin/keepass_sync.sh</code> (unchanged, as <code>/home</code> paths remain writable).</li>
-                </ul>
-                <div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+</section>
+<section id="section-18" class="level3">
+<h3>19</h3>
+<ul>
+<li>Create the synchronization script <code>~/.local/bin/keepass_sync.sh</code> (unchanged, as <code>/home</code> paths remain writable).</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="va">LOCAL_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/webdav/keepass&quot;</span></span>
@@ -495,14 +483,14 @@
 <span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;&quot;</span></span>
 <span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="bu">read</span> <span class="at">-n</span> 1 <span class="at">-s</span> <span class="at">-r</span> <span class="at">-p</span> <span class="st">&quot;Sync Complete. Press any key to close this window...&quot;</span></span></code></pre></div>
-                <ul>
-                <li>Make it executable:</li>
-                </ul>
-                <div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ~/.local/bin/keepass_sync.sh</span></code></pre></div>
-                <ul>
-                <li>Create the desktop shortcut launcher in <code>~/.local/share/applications/keepass_sync.desktop</code>:</li>
-                </ul>
-                <pre><code>[Desktop Entry]
+<ul>
+<li>Make it executable:</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ~/.local/bin/keepass_sync.sh</span></code></pre></div>
+<ul>
+<li>Create the desktop shortcut launcher in <code>~/.local/share/applications/keepass_sync.desktop</code>:</li>
+</ul>
+<pre><code>[Desktop Entry]
 Type=Application
 Version=1.0
 Name=KeePass_Sync
@@ -512,115 +500,115 @@ Icon=utilities-terminal
 Terminal=true
 StartupNotify=false
 Categories=Utility;Security;</code></pre>
-                </section>
-                <section id="section-19" class="level3">
-                <h3>20</h3>
-                <ul>
-                <li>Install Pandoc as a standalone user-space binary to avoid pulling in hundreds of megabytes of Haskell system dependencies on your host.</li>
-                </ul>
-                <div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download, extract, and copy the binary to ~/.local/bin</span></span>
+</section>
+<section id="section-19" class="level3">
+<h3>20</h3>
+<ul>
+<li>Install Pandoc as a standalone user-space binary to avoid pulling in hundreds of megabytes of Haskell system dependencies on your host.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download, extract, and copy the binary to ~/.local/bin</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/jgm/pandoc/releases/download/3.1.11.1/pandoc-3.1.11.1-linux-amd64.tar.gz</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzf</span> pandoc-3.1.11.1-linux-amd64.tar.gz</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> pandoc-3.1.11.1/bin/pandoc ~/.local/bin/</span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> pandoc-3.1.11.1<span class="pp">*</span></span></code></pre></div>
-                </section>
-                <section id="section-20" class="level3">
-                <h3>21</h3>
-                <ul>
-                <li>Install KaTeX in your user space. Because we are using <code>fnm</code> for Node.js, this will sit cleanly within your user profile directory.</li>
-                </ul>
-                <div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install katex <span class="at">--prefix</span> ~/.local/share</span></code></pre></div>
-                </section>
-                <section id="section-21" class="level3">
-                <h3>22</h3>
-                <ul>
-                <li>Install Libertinus and Stix Two fonts at the user level to <code>~/.local/share/fonts/</code> (system-wide font directories are read-only).</li>
-                </ul>
-                </section>
-                <section id="section-22" class="level3">
-                <h3>23</h3>
-                <ul>
-                <li>Install StatiCrypt using npm (managed automatically by <code>fnm</code>’s user-space environment).</li>
-                </ul>
-                <div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> staticrypt</span></code></pre></div>
-                </section>
-                <section id="section-23" class="level3">
-                <h3>24</h3>
-                <ul>
-                <li>Install Picocrypt via Flatpak.</li>
-                </ul>
-                <div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub io.github.picocrypt_ng.Picocrypt-NG</span></code></pre></div>
-                <p><em>(Use Flatseal to adjust directory access permissions as needed).</em></p>
-                </section>
-                <section id="section-24" class="level3">
-                <h3>25</h3>
-                <ul>
-                <li>Install Kiwix via Flatpak.</li>
-                </ul>
-                <div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.kiwix.desktop</span></code></pre></div>
-                <p><em>(Use Flatseal to expose your <code>.zim</code> database storage directory to the Kiwix sandbox).</em></p>
-                </section>
-                <section id="section-25" class="level3">
-                <h3>26</h3>
-                <ul>
-                <li>Install Steam via Flatpak.</li>
-                </ul>
-                <div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub com.valvesoftware.Steam</span></code></pre></div>
-                <ul>
-                <li><strong>Hardware Controller Integration:</strong> Because Steam is sandboxed in a Flatpak, you must layer the controller hardware integration package on your host system using <code>rpm-ostree</code>. This requires a reboot to take effect.</li>
-                </ul>
-                <p><em><strong>Note:</strong> I have not installed devices yet…</em></p>
-                <div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm-ostree</span> install steam-devices</span></code></pre></div>
-                <ul>
-                <li>Install ProtonUp-Qt via Flatpak to manage game compatibility layers:</li>
-                </ul>
-                <div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub net.davidotek.pupgui2</span></code></pre></div>
-                </section>
-                <section id="section-26" class="level3">
-                <h3>27</h3>
-                <p>Install Distrobox (a more fully-featured container app than Toolbx) for use when needed.</p>
-                <div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> https://raw.githubusercontent.com/89luca89/distrobox/main/install <span class="kw">|</span> <span class="fu">sh</span> <span class="at">-s</span> <span class="at">--</span> <span class="at">--prefix</span> ~/.local</span></code></pre></div>
-                </section>
-                <section id="section-27" class="level3">
-                <h3>28</h3>
-                <p>Install digiKam via flatpak. Many configuration options must be evaluated and refined to prevent xmp collisions with darktable.</p>
-                </section>
-                <section id="section-28" class="level3">
-                <h3>29</h3>
-                <p>Install GIMP and the G’MIC and Resynthesizer plugins.</p>
-                <div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP <span class="at">-y</span></span>
+</section>
+<section id="section-20" class="level3">
+<h3>21</h3>
+<ul>
+<li>Install KaTeX in your user space. Because we are using <code>fnm</code> for Node.js, this will sit cleanly within your user profile directory.</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install katex <span class="at">--prefix</span> ~/.local/share</span></code></pre></div>
+</section>
+<section id="section-21" class="level3">
+<h3>22</h3>
+<ul>
+<li>Install Libertinus and Stix Two fonts at the user level to <code>~/.local/share/fonts/</code> (system-wide font directories are read-only).</li>
+</ul>
+</section>
+<section id="section-22" class="level3">
+<h3>23</h3>
+<ul>
+<li>Install StatiCrypt using npm (managed automatically by <code>fnm</code>’s user-space environment).</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> staticrypt</span></code></pre></div>
+</section>
+<section id="section-23" class="level3">
+<h3>24</h3>
+<ul>
+<li>Install Picocrypt via Flatpak.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub io.github.picocrypt_ng.Picocrypt-NG</span></code></pre></div>
+<p><em>(Use Flatseal to adjust directory access permissions as needed).</em></p>
+</section>
+<section id="section-24" class="level3">
+<h3>25</h3>
+<ul>
+<li>Install Kiwix via Flatpak.</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.kiwix.desktop</span></code></pre></div>
+<p><em>(Use Flatseal to expose your <code>.zim</code> database storage directory to the Kiwix sandbox).</em></p>
+</section>
+<section id="section-25" class="level3">
+<h3>26</h3>
+<ul>
+<li>Install Steam via Flatpak.</li>
+</ul>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub com.valvesoftware.Steam</span></code></pre></div>
+<ul>
+<li><strong>Hardware Controller Integration:</strong> Because Steam is sandboxed in a Flatpak, you must layer the controller hardware integration package on your host system using <code>rpm-ostree</code>. This requires a reboot to take effect.</li>
+</ul>
+<p><em><strong>Note:</strong> I have not installed devices yet…</em></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rpm-ostree</span> install steam-devices</span></code></pre></div>
+<ul>
+<li>Install ProtonUp-Qt via Flatpak to manage game compatibility layers:</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub net.davidotek.pupgui2</span></code></pre></div>
+</section>
+<section id="section-26" class="level3">
+<h3>27</h3>
+<p>Install Distrobox (a more fully-featured container app than Toolbx) for use when needed.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-s</span> https://raw.githubusercontent.com/89luca89/distrobox/main/install <span class="kw">|</span> <span class="fu">sh</span> <span class="at">-s</span> <span class="at">--</span> <span class="at">--prefix</span> ~/.local</span></code></pre></div>
+</section>
+<section id="section-27" class="level3">
+<h3>28</h3>
+<p>Install digiKam via flatpak. Many configuration options must be evaluated and refined to prevent xmp collisions with darktable.</p>
+</section>
+<section id="section-28" class="level3">
+<h3>29</h3>
+<p>Install GIMP and the G’MIC and Resynthesizer plugins.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP <span class="at">-y</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP.Plugin.GMic <span class="at">-y</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="ex">flatpak</span> install flathub org.gimp.GIMP.Plugin.Resynthesizer <span class="at">-y</span></span></code></pre></div>
-                <p>Launch GIMP to initialize, then close and install PhotoGIMP</p>
-                <div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/Diolinux/PhotoGIMP/archive/refs/heads/master.zip <span class="at">-O</span> photogimp.zip</span></code></pre></div>
-                <p>Extract and move the /PhotoGIMP-master directory to ~/.var/app/org.gimp.GIMP.</p>
-                </section>
-                <section id="section-29" class="level3">
-                <h3>30</h3>
-                <p>Install darktable via Flatpak</p>
-                <p>I used the KDE native application downloader for this one. Darktable also required extensive check of settings to ensure that XMP is never compressed, is created on import, and to look for xmp files on startup. There were more settings, read through and evaluate each very carefully.</p>
-                </section>
-                <section id="section-30" class="level3">
-                <h3>31</h3>
-                <p>Install Proton VPN, Proton Mail Bridge and Thunderbird and configure. (Flatpak).</p>
-                </section>
-                <section id="section-31" class="level3">
-                <h3>32</h3>
-                <p>Install Pagefind standalone binary in ~/.local/bin</p>
-                <div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.local/bin</span>
+<p>Launch GIMP to initialize, then close and install PhotoGIMP</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/Diolinux/PhotoGIMP/archive/refs/heads/master.zip <span class="at">-O</span> photogimp.zip</span></code></pre></div>
+<p>Extract and move the /PhotoGIMP-master directory to ~/.var/app/org.gimp.GIMP.</p>
+</section>
+<section id="section-29" class="level3">
+<h3>30</h3>
+<p>Install darktable via Flatpak</p>
+<p>I used the KDE native application downloader for this one. Darktable also required extensive check of settings to ensure that XMP is never compressed, is created on import, and to look for xmp files on startup. There were more settings, read through and evaluate each very carefully.</p>
+</section>
+<section id="section-30" class="level3">
+<h3>31</h3>
+<p>Install Proton VPN, Proton Mail Bridge and Thunderbird and configure. (Flatpak).</p>
+</section>
+<section id="section-31" class="level3">
+<h3>32</h3>
+<p>Install Pagefind standalone binary in ~/.local/bin</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.local/bin</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://pagefind.app/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
-                <p>Test with <code>pagefind --version</code>.</p>
-                </section>
-                <section id="section-32" class="level3">
-                <h3>33</h3>
-                <p>Installed Firefox as a Flatpak. This is better than using the default, as the default can lose settings if a GRUB rollback is necessary. It can be installed via the Discover app. Verify it is the one used by default via usual launch method in use.</p>
-                <p>Installed basic extensions: <strong>uBlock Origin</strong> and <strong>Firefox Multi-Account Containers</strong>.</p>
-                <ul>
-                <li><strong>uBlock Origin</strong> is an ad/content blocker and helps prevent trackers and popups.</li>
-                <li><strong>Firefox Multi-Account Containers</strong> separates tabs into isolated containers. Websites can be kept in specific containers, and data/cookies/etc. from one container cannot see the others. You can log into separate accounts in different containers for the same service.</li>
-                </ul>
-                </section>
-                </section>
+<p>Test with <code>pagefind --version</code>.</p>
+</section>
+<section id="section-32" class="level3">
+<h3>33</h3>
+<p>Installed Firefox as a Flatpak. This is better than using the default, as the default can lose settings if a GRUB rollback is necessary. It can be installed via the Discover app. Verify it is the one used by default via usual launch method in use.</p>
+<p>Installed basic extensions: <strong>uBlock Origin</strong> and <strong>Firefox Multi-Account Containers</strong>.</p>
+<ul>
+<li><strong>uBlock Origin</strong> is an ad/content blocker and helps prevent trackers and popups.</li>
+<li><strong>Firefox Multi-Account Containers</strong> separates tabs into isolated containers. Websites can be kept in specific containers, and data/cookies/etc. from one container cannot see the others. You can log into separate accounts in different containers for the same service.</li>
+</ul>
+</section>
+</section>
             </div>
         </main>
 
