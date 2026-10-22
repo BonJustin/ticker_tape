@@ -130,37 +130,6 @@
                         <details class="dropdown">
                             <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
                             <ul>
-                                <li>
-                                    <a
-                                        href="../qsjwbuf/20260602080508.html"
-                                        data-tooltip="Private"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"
-                                        >
-                                            <circle cx="12" cy="16" r="1" />
-                                            <rect
-                                                x="3"
-                                                y="10"
-                                                width="18"
-                                                height="12"
-                                                rx="2"
-                                            />
-                                            <path
-                                                d="M7 10V7a5 5 0 0 1 10 0v3"
-                                            />
-                                        </svg>
-                                    </a>
-                                </li>
                                                                 <li>
                                     <a href="../Bookmarks.html"
                                         >Bookmarks</a
@@ -198,44 +167,56 @@
                                           <div class="abstract">I am working on transitioning my current website (jmbsquared.com) to Github, and using a CI/CD pipeline to generate the SSG from Markdown.</div>
                                         <hr />
                 </header>
-                  <section id="project-identity-philosophy" class="level1">
-<h1>1. Project Identity &amp; Philosophy</h1>
-<ul>
-<li><strong>Nature:</strong> A custom Static Site Generator (SSG) pipeline transforming a Zettelkasten-style Markdown repository into a secure, searchable, static HTML site.</li>
-<li><strong>Core Philosophy:</strong> <strong>Software Agnosticism and Archival Purity.</strong> The system prioritizes plain-text Markdown as the source of truth, avoiding proprietary “Vault” structures (e.g., Obsidian) to ensure long-term data retrieval without dependency on specific software.</li>
-<li><strong>Organization:</strong> Content is stored using temporal Unique Identifiers (UIDs: <code>YYYYMMDDHHMMSS</code>) and chronological bucketing (<code>YYYYMM</code> folders).</li>
-</ul>
-</section>
-<section id="technical-stack-the-toolchain" class="level1">
-<h1>2. Technical Stack (The Toolchain)</h1>
-<ul>
-<li><strong>Orchestration:</strong> Python (<code>build_site.py</code>) managing a linear build pipeline.</li>
-<li><strong>Conversion:</strong> Pandoc <span class="math inline">\rightarrow</span> HTML (via Lua filters for link resolution) and Pandoc <span class="math inline">\rightarrow</span> Typst <span class="math inline">\rightarrow</span> PDF.</li>
-<li><strong>Search:</strong> Pagefind (chunked, client-side indexing of titles and keywords).</li>
-<li><strong>Security:</strong> StatiCrypt (client-side AES encryption) for tiered access: Public, Guest, and Personal.</li>
-<li><strong>Frontend:</strong> Pico.css, KaTeX (mathematics), and custom HTML templates.</li>
-<li><strong>Local Discovery:</strong> Transitioning to a high-performance CLI stack: <code>fd</code>, <code>fzf</code>, and <code>ripgrep</code>.</li>
-</ul>
-</section>
-<section id="current-objectives" class="level1">
-<h1>3. Current Objectives</h1>
-<ul>
-<li><strong>Primary Goal:</strong> Migrate from a manual VPS deployment to a zero-cost, automated CI/CD pipeline using Github.</li>
-<li><strong>Infrastructure Shift:</strong> Local Build <span class="math inline">\rightarrow</span> <strong>GitHub Actions</strong> (Ephemeral VM for computation) <span class="math inline">\rightarrow</span> <strong>GitHub Pages</strong> (Static Hosting).</li>
-<li><strong>UX Goal:</strong> Create a “Managed Service” model for non-technical contributors, allowing them to write in Markdown (potentially via web-UI) while the pipeline handles the technical build/deploy sequence.</li>
-<li><strong>Security Shift:</strong> Move raw passwords from <code>config.yaml</code> to <strong>GitHub Actions Secrets</strong> to prevent credential leakage in Git history.</li>
-</ul>
-</section>
-<section id="current-status" class="level1">
-<h1>4. Current Status</h1>
-<ul>
-<li><p>Created a new private repository: <code>ticker_tape</code> as a project root on github.</p></li>
-<li><p>Created a new local development directory and copied relevant files to be edited (locally).</p></li>
-<li><p>Created a local root project directory and copied relevant files.</p></li>
-</ul>
-<hr />
-<p><strong>~/dev/ticker_tape/</strong></p>
-<pre><code>.
+                                 <!-- Pagefind UI Container -->
+                <input type="search" id="body-search-input" placeholder="Search notes...">
+                <ul id="body-search-results"></ul>
+                <footer style="text-align: right;">
+                <em>by Justin Bonanno</em>
+                </footer>
+                </article>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                    new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+                </script>
+                <section id="project-identity-philosophy" class="level1">
+                <h1>1. Project Identity &amp; Philosophy</h1>
+                <ul>
+                <li><strong>Nature:</strong> A custom Static Site Generator (SSG) pipeline transforming a Zettelkasten-style Markdown repository into a secure, searchable, static HTML site.</li>
+                <li><strong>Core Philosophy:</strong> <strong>Software Agnosticism and Archival Purity.</strong> The system prioritizes plain-text Markdown as the source of truth, avoiding proprietary “Vault” structures (e.g., Obsidian) to ensure long-term data retrieval without dependency on specific software.</li>
+                <li><strong>Organization:</strong> Content is stored using temporal Unique Identifiers (UIDs: <code>YYYYMMDDHHMMSS</code>) and chronological bucketing (<code>YYYYMM</code> folders).</li>
+                </ul>
+                </section>
+                <section id="technical-stack-the-toolchain" class="level1">
+                <h1>2. Technical Stack (The Toolchain)</h1>
+                <ul>
+                <li><strong>Orchestration:</strong> Python (<code>build_site.py</code>) managing a linear build pipeline.</li>
+                <li><strong>Conversion:</strong> Pandoc <span class="math inline">\rightarrow</span> HTML (via Lua filters for link resolution) and Pandoc <span class="math inline">\rightarrow</span> Typst <span class="math inline">\rightarrow</span> PDF.</li>
+                <li><strong>Search:</strong> Pagefind (chunked, client-side indexing of titles and keywords).</li>
+                <li><strong>Security:</strong> StatiCrypt (client-side AES encryption) for tiered access: Public, Guest, and Personal.</li>
+                <li><strong>Frontend:</strong> Pico.css, KaTeX (mathematics), and custom HTML templates.</li>
+                <li><strong>Local Discovery:</strong> Transitioning to a high-performance CLI stack: <code>fd</code>, <code>fzf</code>, and <code>ripgrep</code>.</li>
+                </ul>
+                </section>
+                <section id="current-objectives" class="level1">
+                <h1>3. Current Objectives</h1>
+                <ul>
+                <li><strong>Primary Goal:</strong> Migrate from a manual VPS deployment to a zero-cost, automated CI/CD pipeline using Github.</li>
+                <li><strong>Infrastructure Shift:</strong> Local Build <span class="math inline">\rightarrow</span> <strong>GitHub Actions</strong> (Ephemeral VM for computation) <span class="math inline">\rightarrow</span> <strong>GitHub Pages</strong> (Static Hosting).</li>
+                <li><strong>UX Goal:</strong> Create a “Managed Service” model for non-technical contributors, allowing them to write in Markdown (potentially via web-UI) while the pipeline handles the technical build/deploy sequence.</li>
+                <li><strong>Security Shift:</strong> Move raw passwords from <code>config.yaml</code> to <strong>GitHub Actions Secrets</strong> to prevent credential leakage in Git history.</li>
+                </ul>
+                </section>
+                <section id="current-status" class="level1">
+                <h1>4. Current Status</h1>
+                <ul>
+                <li><p>Created a new private repository: <code>ticker_tape</code> as a project root on github.</p></li>
+                <li><p>Created a new local development directory and copied relevant files to be edited (locally).</p></li>
+                <li><p>Created a local root project directory and copied relevant files.</p></li>
+                </ul>
+                <hr />
+                <p><strong>~/dev/ticker_tape/</strong></p>
+                <pre><code>.
 ├── build
 │   ├── assets
 │   │   ├── css
@@ -419,9 +400,9 @@
 │   │   └── 20260602080508.md
 │   └── Reminders.md
 └── pyproject.toml</code></pre>
-<hr />
-<p><strong>build_site.py</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
+                <hr />
+                <p><strong>build_site.py</strong></p>
+                <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> argparse</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
@@ -1061,9 +1042,9 @@
 <span id="cb2-638"><a href="#cb2-638" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-639"><a href="#cb2-639" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
 <span id="cb2-640"><a href="#cb2-640" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre></div>
-<hr />
-<p><strong>config.yaml</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># All paths are relative to the project root (~/dev/ticker_tape/)</span></span>
+                <hr />
+                <p><strong>config.yaml</strong></p>
+                <div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># All paths are relative to the project root (~/dev/ticker_tape/)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">paths</span><span class="kw">:</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">app</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;build&quot;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">src</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;content&quot;</span></span>
@@ -1080,9 +1061,9 @@
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">navigation_menu</span><span class="kw">:</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Bookmarks</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Reminders</span></span></code></pre></div>
-<hr />
-<p><strong>translate_links.lua</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> Link<span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
+                <hr />
+                <p><strong>translate_links.lua</strong></p>
+                <div class="sourceCode" id="cb4"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> Link<span class="op">(</span><span class="va">el</span><span class="op">)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">-- ONLY process links that end in .md AND do NOT start with http</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> <span class="va">el</span><span class="op">.</span><span class="va">target</span><span class="op">:</span><span class="fu">match</span><span class="op">(</span><span class="st">&quot;%.md(%#?.*)$&quot;</span><span class="op">)</span> <span class="kw">and</span> <span class="kw">not</span> <span class="va">el</span><span class="op">.</span><span class="va">target</span><span class="op">:</span><span class="fu">match</span><span class="op">(</span><span class="st">&quot;^http&quot;</span><span class="op">)</span> <span class="cf">then</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">-- 1. Replace .md with .html</span></span>
@@ -1092,9 +1073,9 @@
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="va">el</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code></pre></div>
-<hr />
-<p><strong>pandoc_md_to_static_html.yaml</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reader</span><span class="kw">:</span><span class="at"> markdown</span></span>
+                <hr />
+                <p><strong>pandoc_md_to_static_html.yaml</strong></p>
+                <div class="sourceCode" id="cb5"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">reader</span><span class="kw">:</span><span class="at"> markdown</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">writer</span><span class="kw">:</span><span class="at"> html</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">variables</span><span class="kw">:</span></span>
@@ -1119,10 +1100,10 @@
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">preserve-tabs</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">html-q-tags</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">fail-if-warnings</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div>
-<hr />
-<p><strong>pyproject.toml</strong></p>
-<p><em>Note: Ignore the python version, the user will manage.</em></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode toml"><code class="sourceCode toml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
+                <hr />
+                <p><strong>pyproject.toml</strong></p>
+                <p><em>Note: Ignore the python version, the user will manage.</em></p>
+                <div class="sourceCode" id="cb6"><pre class="sourceCode toml"><code class="sourceCode toml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[project]</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">name</span> <span class="op">=</span> <span class="st">&quot;jmbsquared_github&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dt">version</span> <span class="op">=</span> <span class="st">&quot;0.1.0&quot;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dt">description</span> <span class="op">=</span> <span class="st">&quot;Add your description here&quot;</span></span>
@@ -1131,9 +1112,9 @@
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="dt">dependencies</span> <span class="op">=</span> <span class="op">[</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;pyyaml&gt;=6.0.3&quot;</span><span class="op">,</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
-<hr />
-<p><strong>md_to_static_html.html</strong></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
+                <hr />
+                <p><strong>md_to_static_html.html</strong></p>
+                <div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    data-theme</span><span class="op">=</span><span class="st">&quot;light&quot;</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ot">    xmlns</span><span class="op">=</span><span class="st">&quot;http://www.w3.org/1999/xhtml&quot;</span></span>
@@ -1387,9 +1368,9 @@
 <span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">dialog</span><span class="dt">&gt;</span></span>
 <span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
-<hr />
-<p><strong>.gitignore</strong></p>
-<pre><code>dist/
+                <hr />
+                <p><strong>.gitignore</strong></p>
+                <pre><code>dist/
 *.log
 
 .DS_Store
@@ -1403,14 +1384,14 @@ wheels/
 
 # Virtual environments
 .venv</code></pre>
-<hr />
-<p><strong>.staticrypt.json</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+                <hr />
+                <p><strong>.staticrypt.json</strong></p>
+                <div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;salt&quot;</span><span class="fu">:</span> <span class="st">&quot;081e9265164557e70062a127ba87c806&quot;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
-<hr />
-<p><strong>build.yml</strong></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">permissions</span><span class="kw">:</span></span>
+                <hr />
+                <p><strong>build.yml</strong></p>
+                <div class="sourceCode" id="cb10"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">permissions</span><span class="kw">:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> write</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pages</span><span class="kw">:</span><span class="at"> write</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">id-token</span><span class="kw">:</span><span class="at"> write</span></span>
@@ -1464,27 +1445,27 @@ wheels/
 <span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">user-email</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;251586633+BonJustin@users.noreply.github.com&#39;</span></span>
 <span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">target</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;main&#39;</span></span>
 <span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="fu">commit-message</span><span class="kw">:</span><span class="at"> </span><span class="st">&#39;Deploying site build from source repo&#39;</span></span></code></pre></div>
-</section>
-<section id="section" class="level1">
-<h1>5.</h1>
-<p>Github secrets were configured. The local system (Linux) has not interacted with the repository at all, and I will need assistance in execution, if no further changes or investigations are needed at this time.</p>
-</section>
-<section id="ssh-was-configured-to-work-from-my-linux-boot-drive-with-github." class="level1">
-<h1>6. SSH was configured to work from my Linux boot drive with Github.</h1>
-</section>
-<section id="the-initial-git-push-worked-and-all-files-were-uploaded." class="level1">
-<h1>7. The initial git push worked, and all files were uploaded.</h1>
-</section>
-<section id="converted-the-repository-to-public-which-is-necessary-to-use-free-github-pages." class="level1">
-<h1>8. Converted the repository to public, which is necessary to use free github pages.</h1>
-</section>
-<section id="debugging-process-involved-updating-pathing-logic-in-a-few-places.-the-site-initially-appears-to-be-fully-functional." class="level1">
-<h1>9. Debugging process involved updating pathing logic in a few places. The site initially appears to be fully functional.</h1>
-</section>
-<section id="added-the-following-shell-script-to-my-linux-environment-to-mirror-the-markdown-repository-which-lives-and-is-edited-from-multiple-systems-to-the-development-content-folder-then-push-the-changes-to-github." class="level1">
-<h1>10. Added the following shell script to my linux environment to mirror the markdown repository (which lives and is edited from multiple systems) to the development content folder, then push the changes to github.</h1>
-<p><strong>/var/home/bonju/.local/bin/publish_ipse_paideia.sh</strong></p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+                </section>
+                <section id="section" class="level1">
+                <h1>5.</h1>
+                <p>Github secrets were configured. The local system (Linux) has not interacted with the repository at all, and I will need assistance in execution, if no further changes or investigations are needed at this time.</p>
+                </section>
+                <section id="ssh-was-configured-to-work-from-my-linux-boot-drive-with-github." class="level1">
+                <h1>6. SSH was configured to work from my Linux boot drive with Github.</h1>
+                </section>
+                <section id="the-initial-git-push-worked-and-all-files-were-uploaded." class="level1">
+                <h1>7. The initial git push worked, and all files were uploaded.</h1>
+                </section>
+                <section id="converted-the-repository-to-public-which-is-necessary-to-use-free-github-pages." class="level1">
+                <h1>8. Converted the repository to public, which is necessary to use free github pages.</h1>
+                </section>
+                <section id="debugging-process-involved-updating-pathing-logic-in-a-few-places.-the-site-initially-appears-to-be-fully-functional." class="level1">
+                <h1>9. Debugging process involved updating pathing logic in a few places. The site initially appears to be fully functional.</h1>
+                </section>
+                <section id="added-the-following-shell-script-to-my-linux-environment-to-mirror-the-markdown-repository-which-lives-and-is-edited-from-multiple-systems-to-the-development-content-folder-then-push-the-changes-to-github." class="level1">
+                <h1>10. Added the following shell script to my linux environment to mirror the markdown repository (which lives and is edited from multiple systems) to the development content folder, then push the changes to github.</h1>
+                <p><strong>/var/home/bonju/.local/bin/publish_ipse_paideia.sh</strong></p>
+                <div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ==============================================================================</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># CONFIGURATION</span></span>
@@ -1547,27 +1528,27 @@ wheels/
 <span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;ERROR: Git push failed.&quot;</span></span>
 <span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">exit</span> 1</span>
 <span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span></code></pre></div>
-</section>
-<section id="section-1" class="level1">
-<h1>11.</h1>
-<p>A critical issue was identified. To enable the free version of github pages, the repository must be public. This is functional, but means that the encrypted file output is being generated from a public markdown file, making the encryption worthless. One possible solution is to place the markdown content in a private repository, and have the generated static site output save to a second public repository.</p>
-</section>
-<section id="section-2" class="level1">
-<h1>12.</h1>
-<p>A second private repository <code>ipse_paideia</code> was created. the ticker_tape repository was purged, and the files transferred to ipse_paideia. I am now attempting to have the private repo post output to the public repo. I am using</p>
-</section>
-<section id="section-3" class="level1">
-<h1>13.</h1>
-<p>A github personal access token was generated and build.yml updated to attempt this solution. This worked, publishing the website to ticker_tape.</p>
-</section>
-<section id="section-4" class="level1">
-<h1>14.</h1>
-<p>The shell script was adjusted and is now working to mirror my source (ntfs ssd) to my linux drive, then push to github <code>ipse_paideia</code> which then triggers the CI/CD pipeline.</p>
-</section>
-<section id="section-5" class="level1">
-<h1>15.</h1>
-<p>I now have two functionally different versions. My original version worked on my local system, generating a complete website in an output folder on my ssd, which was then synced to vps via rclone. now i also have a version that uses github actions, and the shell script to accomodate. I need to consider whether changes implemented during the transition to github should now be reflected back on the original project, as design changes were made. What has been included here is reflective only of the new github version. I use uv in my local development workflow. I will provide the local scripts for comparison and evaluation, wait for further input.</p>
-</section>
+                </section>
+                <section id="section-1" class="level1">
+                <h1>11.</h1>
+                <p>A critical issue was identified. To enable the free version of github pages, the repository must be public. This is functional, but means that the encrypted file output is being generated from a public markdown file, making the encryption worthless. One possible solution is to place the markdown content in a private repository, and have the generated static site output save to a second public repository.</p>
+                </section>
+                <section id="section-2" class="level1">
+                <h1>12.</h1>
+                <p>A second private repository <code>ipse_paideia</code> was created. the ticker_tape repository was purged, and the files transferred to ipse_paideia. I am now attempting to have the private repo post output to the public repo. I am using</p>
+                </section>
+                <section id="section-3" class="level1">
+                <h1>13.</h1>
+                <p>A github personal access token was generated and build.yml updated to attempt this solution. This worked, publishing the website to ticker_tape.</p>
+                </section>
+                <section id="section-4" class="level1">
+                <h1>14.</h1>
+                <p>The shell script was adjusted and is now working to mirror my source (ntfs ssd) to my linux drive, then push to github <code>ipse_paideia</code> which then triggers the CI/CD pipeline.</p>
+                </section>
+                <section id="section-5" class="level1">
+                <h1>15.</h1>
+                <p>I now have two functionally different versions. My original version worked on my local system, generating a complete website in an output folder on my ssd, which was then synced to vps via rclone. now i also have a version that uses github actions, and the shell script to accomodate. I need to consider whether changes implemented during the transition to github should now be reflected back on the original project, as design changes were made. What has been included here is reflective only of the new github version. I use uv in my local development workflow. I will provide the local scripts for comparison and evaluation, wait for further input.</p>
+                </section>
             </div>
         </main>
 

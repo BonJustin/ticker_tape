@@ -114,37 +114,6 @@
                         <details class="dropdown">
                             <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
                             <ul>
-                                <li>
-                                    <a
-                                        href="../qsjwbuf/20260602080508.html"
-                                        data-tooltip="Private"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"
-                                        >
-                                            <circle cx="12" cy="16" r="1" />
-                                            <rect
-                                                x="3"
-                                                y="10"
-                                                width="18"
-                                                height="12"
-                                                rx="2"
-                                            />
-                                            <path
-                                                d="M7 10V7a5 5 0 0 1 10 0v3"
-                                            />
-                                        </svg>
-                                    </a>
-                                </li>
                                                                 <li>
                                     <a href="../Bookmarks.html"
                                         >Bookmarks</a
@@ -182,75 +151,87 @@
                                           <div class="abstract">I’ve read a bit. It’s enough over a long enough time that I can’t remember all it. Maybe this will help. These days I tend to read for purpose. It’s no substitute. It evicerates my soul, this new world of shallow nothings.</div>
                                         <hr />
                 </header>
-                  <article>
-<header style="text-align: center;">
-<h1 style="color: var(--pico-primary)">
-Ipse Paideia
-</h1>
-<p style="color: var(--pico-muted-color)">
-<em>A collection of notes by an irrelevant eccentric</em>
-</p>
-</header>
-<details name="example">
-<summary>
-Titles
-</summary>
-<ul>
-<li><strong>Alice’s Adventures in Wonderland</strong> by <em>Lewis Carroll</em></li>
-<li><strong>Crime and Punishment</strong> by <em>Fyodor Dostoevski</em></li>
-<li><strong>A Portrait of the Artist as a Young Man</strong> by <em>James Joyce</em></li>
-<li><strong>Project Hail Mary</strong> by <em>Andy Weir</em></li>
-<li><strong>Salt, Fat, Acid, Heat</strong> by <em>Samin Nosrat</em></li>
-<li><strong>Sapiens</strong> by <em>Yuval Noah Harari</em></li>
-<li><strong>Snow Crash</strong> by <em>Neal Stephenson</em></li>
-<li><strong>Sylvie &amp; Bruno</strong> by <em>Lewis Carroll</em></li>
-<li><strong>Sylvie &amp; Bruno Concluded</strong> by <em>Lewis Carroll</em></li>
-</ul>
-</details>
-<hr />
-<details name="example">
-<summary>
-Authors
-</summary>
-<ul>
-<li><strong>Carroll, Lewis</strong>
-<ul>
-<li><em>Alice’s Adventures in Wonderland</em></li>
-<li><em>Through the Looking-Glass</em></li>
-<li><em>Sylvie &amp; Bruno</em></li>
-<li><em>Sylvie &amp; Bruno Concluded</em></li>
-</ul></li>
-<li><strong>Dostoevski, Fyodor</strong>
-<ul>
-<li><em>The Brother’s Karamazov</em></li>
-<li><em>Crime And Punishment</em></li>
-<li><em>The Demons</em></li>
-<li><em>The Idiot</em></li>
-<li><em>White Nights</em></li>
-</ul></li>
-<li><strong>Harari, Yuval Noah</strong>
-<ul>
-<li><em>Sapiens</em></li>
-</ul></li>
-<li><strong>Joyce, James</strong>
-<ul>
-<li><em>A Portrait of the Artist as a Young Man</em></li>
-</ul></li>
-<li><strong>Nosrat, Salmin</strong>
-<ul>
-<li><em>Salt, Fat, Acid, Heat</em></li>
-</ul></li>
-<li><strong>Stephenson, Neal</strong>
-<ul>
-<li><em>Snow Crash</em></li>
-</ul></li>
-<li><strong>Weir, Andy</strong>
-<ul>
-<li><em>Project Hail Mary</em></li>
-</ul></li>
-</ul>
-</details>
-</article>
+                                 <!-- Pagefind UI Container -->
+                <input type="search" id="body-search-input" placeholder="Search notes...">
+                <ul id="body-search-results"></ul>
+                <footer style="text-align: right;">
+                <em>by Justin Bonanno</em>
+                </footer>
+                </article>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                    new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+                </script>
+                <article>
+                <header style="text-align: center;">
+                <h1 style="color: var(--pico-primary)">
+                Ipse Paideia
+                </h1>
+                <p style="color: var(--pico-muted-color)">
+                <em>A collection of notes by an irrelevant eccentric</em>
+                </p>
+                </header>
+                <details name="example">
+                <summary>
+                Titles
+                </summary>
+                <ul>
+                <li><strong>Alice’s Adventures in Wonderland</strong> by <em>Lewis Carroll</em></li>
+                <li><strong>Crime and Punishment</strong> by <em>Fyodor Dostoevski</em></li>
+                <li><strong>A Portrait of the Artist as a Young Man</strong> by <em>James Joyce</em></li>
+                <li><strong>Project Hail Mary</strong> by <em>Andy Weir</em></li>
+                <li><strong>Salt, Fat, Acid, Heat</strong> by <em>Samin Nosrat</em></li>
+                <li><strong>Sapiens</strong> by <em>Yuval Noah Harari</em></li>
+                <li><strong>Snow Crash</strong> by <em>Neal Stephenson</em></li>
+                <li><strong>Sylvie &amp; Bruno</strong> by <em>Lewis Carroll</em></li>
+                <li><strong>Sylvie &amp; Bruno Concluded</strong> by <em>Lewis Carroll</em></li>
+                </ul>
+                </details>
+                <hr />
+                <details name="example">
+                <summary>
+                Authors
+                </summary>
+                <ul>
+                <li><strong>Carroll, Lewis</strong>
+                <ul>
+                <li><em>Alice’s Adventures in Wonderland</em></li>
+                <li><em>Through the Looking-Glass</em></li>
+                <li><em>Sylvie &amp; Bruno</em></li>
+                <li><em>Sylvie &amp; Bruno Concluded</em></li>
+                </ul></li>
+                <li><strong>Dostoevski, Fyodor</strong>
+                <ul>
+                <li><em>The Brother’s Karamazov</em></li>
+                <li><em>Crime And Punishment</em></li>
+                <li><em>The Demons</em></li>
+                <li><em>The Idiot</em></li>
+                <li><em>White Nights</em></li>
+                </ul></li>
+                <li><strong>Harari, Yuval Noah</strong>
+                <ul>
+                <li><em>Sapiens</em></li>
+                </ul></li>
+                <li><strong>Joyce, James</strong>
+                <ul>
+                <li><em>A Portrait of the Artist as a Young Man</em></li>
+                </ul></li>
+                <li><strong>Nosrat, Salmin</strong>
+                <ul>
+                <li><em>Salt, Fat, Acid, Heat</em></li>
+                </ul></li>
+                <li><strong>Stephenson, Neal</strong>
+                <ul>
+                <li><em>Snow Crash</em></li>
+                </ul></li>
+                <li><strong>Weir, Andy</strong>
+                <ul>
+                <li><em>Project Hail Mary</em></li>
+                </ul></li>
+                </ul>
+                </details>
+                </article>
             </div>
         </main>
 

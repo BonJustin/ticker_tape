@@ -114,37 +114,6 @@
                         <details class="dropdown">
                             <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
                             <ul>
-                                <li>
-                                    <a
-                                        href="../qsjwbuf/20260602080508.html"
-                                        data-tooltip="Private"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"
-                                        >
-                                            <circle cx="12" cy="16" r="1" />
-                                            <rect
-                                                x="3"
-                                                y="10"
-                                                width="18"
-                                                height="12"
-                                                rx="2"
-                                            />
-                                            <path
-                                                d="M7 10V7a5 5 0 0 1 10 0v3"
-                                            />
-                                        </svg>
-                                    </a>
-                                </li>
                                                                 <li>
                                     <a href="../Bookmarks.html"
                                         >Bookmarks</a
@@ -182,14 +151,26 @@
                                           <div class="abstract">Notes regarding how to download Python packages for offline availability, without using them in a current project.</div>
                                         <hr />
                 </header>
-                  <p>Create a new project folder and navigate to it. My projects are in <code>~/dev</code>.</p>
-<ul>
-<li><code>uv init</code> creates a new project in the current working directory.</li>
-<li><code>uv add requests python_package_name</code> installs the requested packages in <code>~/.cache/uv</code>.</li>
-</ul>
-<p>The packages will remain in the cache until running <code>uv cache clean</code> which removes unused packages. Otherwise, requesting them in a new project will use the locally availble packages by default.</p>
-<p><em>I am not certain how versions will be dealt with, or how the packages interact with different versions of Python.</em></p>
-<p>The project created to download the packages can be immediately deleted.</p>
+                                 <!-- Pagefind UI Container -->
+                <input type="search" id="body-search-input" placeholder="Search notes...">
+                <ul id="body-search-results"></ul>
+                <footer style="text-align: right;">
+                <em>by Justin Bonanno</em>
+                </footer>
+                </article>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                    new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+                </script>
+                <p>Create a new project folder and navigate to it. My projects are in <code>~/dev</code>.</p>
+                <ul>
+                <li><code>uv init</code> creates a new project in the current working directory.</li>
+                <li><code>uv add requests python_package_name</code> installs the requested packages in <code>~/.cache/uv</code>.</li>
+                </ul>
+                <p>The packages will remain in the cache until running <code>uv cache clean</code> which removes unused packages. Otherwise, requesting them in a new project will use the locally availble packages by default.</p>
+                <p><em>I am not certain how versions will be dealt with, or how the packages interact with different versions of Python.</em></p>
+                <p>The project created to download the packages can be immediately deleted.</p>
             </div>
         </main>
 

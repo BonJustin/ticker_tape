@@ -114,37 +114,6 @@
                         <details class="dropdown">
                             <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
                             <ul>
-                                <li>
-                                    <a
-                                        href="../qsjwbuf/20260602080508.html"
-                                        data-tooltip="Private"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="24"
-                                            height="24"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"
-                                        >
-                                            <circle cx="12" cy="16" r="1" />
-                                            <rect
-                                                x="3"
-                                                y="10"
-                                                width="18"
-                                                height="12"
-                                                rx="2"
-                                            />
-                                            <path
-                                                d="M7 10V7a5 5 0 0 1 10 0v3"
-                                            />
-                                        </svg>
-                                    </a>
-                                </li>
                                                                 <li>
                                     <a href="../Bookmarks.html"
                                         >Bookmarks</a
@@ -181,10 +150,22 @@
 
                                           <hr />
                 </header>
-                  <p>In order to generate the same format that I am using for my static website using Pandoc, but in a portable HTML (with embedded font/js/images) for easy sharing, I copied assets (CSS and KaTeX), Pandoc defaults YAML, and Pandoc HTML template to appropriate directories in <code>~/.local/share/pandoc/</code>. I tailored the YAML file appropriately.</p>
-<p>Now I can use Pandoc from the command line to generate atomic HTML files.</p>
-<p><em>bash</em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--defaults</span> <span class="dt">\</span></span>
+                                 <!-- Pagefind UI Container -->
+                <input type="search" id="body-search-input" placeholder="Search notes...">
+                <ul id="body-search-results"></ul>
+                <footer style="text-align: right;">
+                <em>by Justin Bonanno</em>
+                </footer>
+                </article>
+                <script>
+                  window.addEventListener('DOMContentLoaded', (event) => {
+                    new PagefindUI({ element: "#search", showSubResults: true });
+                  });
+                </script>
+                <p>In order to generate the same format that I am using for my static website using Pandoc, but in a portable HTML (with embedded font/js/images) for easy sharing, I copied assets (CSS and KaTeX), Pandoc defaults YAML, and Pandoc HTML template to appropriate directories in <code>~/.local/share/pandoc/</code>. I tailored the YAML file appropriately.</p>
+                <p>Now I can use Pandoc from the command line to generate atomic HTML files.</p>
+                <p><em>bash</em></p>
+                <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--defaults</span> <span class="dt">\</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>embedded_html.yaml <span class="dt">\</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>/path/to/markdown_file.md <span class="dt">\</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>-o /path/to/html_output_file.html</span></code></pre></div>
