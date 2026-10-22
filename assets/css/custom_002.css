@@ -200,7 +200,7 @@ nav details.dropdown > summary + ul {
 details.link-dropdown summary {
   display: inline-block;
   background: transparent;
-  border: none;
+  border: none !important;
   padding: 0;
   margin: 0;
   width: auto;
