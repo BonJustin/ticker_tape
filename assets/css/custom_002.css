@@ -196,25 +196,44 @@ nav details.dropdown > summary + ul {
     right: 0; /* Anchor to the right edge of the parent */
 }
 
-/* Make the summary trigger look like a regular text link */
+/* 1. Reset the details wrapper to prevent layout shifts */
+nav details.dropdown.link-dropdown {
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/* 2. Make the summary behave exactly like an <a> tag */
 details.link-dropdown summary {
-  display: inline-block;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  width: auto;
-  color: var(--pico-primary-hover); /* Uses Pico's primary link color */
-  cursor: pointer;
+    display: flex;           /* Aligns SVG centrally */
+    align-items: center;
+    justify-content: center;
+    list-style: none;        /* Removes default arrow */
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: inherit;          /* Inherits color from the nav link context */
+    transition: color var(--pico-transition-duration) var(--pico-transition-timing-function);
 }
 
-/* Remove Pico's default dropdown arrow icon */
-details.link-dropdown summary::after {
-  display: none;
+/* 3. Remove the webkit marker for Safari/Chrome */
+details.link-dropdown summary::-webkit-details-marker {
+    display: none;
 }
 
-/* Optional: Add a subtle hover state */
+/* 4. Match the hover state of the other nav links */
 details.link-dropdown summary:hover {
-  color: var(--pico-primary-hover);
+    color: var(--pico-primary-hover);
+}
+
+/* 5. Ensure the SVG inside matches the scale and color of the links */
+details.link-dropdown summary svg {
+    display: block;
+    stroke: currentColor;    /* Ensures the SVG color changes on hover */
 }
 
 .brand_text {
@@ -233,13 +252,4 @@ pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
-}
-
-/* Remove the default arrow/carat from dropdowns */
-details.dropdown summary {
-  list-style: none; /* Standard for Firefox and modern Chrome */
-}
-
-details.dropdown summary::-webkit-details-marker {
-  display: none; /* Required for Safari and legacy Chrome/Edge */
 }
