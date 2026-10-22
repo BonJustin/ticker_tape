@@ -128,7 +128,7 @@
                     </li>
                     <li>
                         <details class="dropdown">
-                            <summary role="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
+                            <summary><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu preview-icon"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></summary>
                             <ul>
                                 <li>
                                     <a
@@ -1562,9 +1562,11 @@ wheels/
 </section>
 <section id="section-4" class="level1">
 <h1>14.</h1>
-<p>The shell script to copy the markdown contents remains nonfunctional. I have been using the command line.</p>
-<hr />
-<p>I would like to consider whether copying the files is necessary or beneficial. Evaluate and report.</p>
+<p>The shell script was adjusted and is now working to mirror my source (ntfs ssd) to my linux drive, then push to github <code>ipse_paideia</code> which then triggers the CI/CD pipeline.</p>
+</section>
+<section id="section-5" class="level1">
+<h1>15.</h1>
+<p>I now have two functionally different versions. My original version worked on my local system, generating a complete website in an output folder on my ssd, which was then synced to vps via rclone. now i also have a version that uses github actions, and the shell script to accomodate. I need to consider whether changes implemented during the transition to github should now be reflected back on the original project, as design changes were made. What has been included here is reflective only of the new github version. I use uv in my local development workflow. I will provide the local scripts for comparison and evaluation, wait for further input.</p>
 </section>
             </div>
         </main>
