@@ -181,66 +181,6 @@ math[display="block"] {
     display: block;
 }
 
-/* --- Consolidated Dropdown Reset --- */
-
-/* 1. Force-remove the component box (border, background, shadow) */
-nav details.dropdown.link-dropdown {
-    line-height: 0 !important;
-    border: none !important;
-    background: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-flex !important;
-    box-shadow: none !important;
-    vertical-align: middle;
-}
-
-/* 2. Reset the summary to behave as a transparent trigger */
-nav details.dropdown.link-dropdown summary {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    list-style: none !important;
-    cursor: pointer;
-    padding: 0 !important;
-    margin: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    color: var(--pico-primary);
-    line-height: 0 !important;
-    vertical-align: middle;
-}
-
-/* 3. KILL THE CARAT: Target the pseudo-element Pico uses for the arrow */
-nav details.dropdown.link-dropdown summary::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* 4. Remove browser-native markers (Safari/Chrome) */
-nav details.dropdown.link-dropdown summary::-webkit-details-marker {
-    display: none !important;
-}
-
-/* 5. Maintain hover state and SVG behavior */
-nav details.dropdown.link-dropdown summary:hover {
-    color: var(--pico-primary-hover) !important;
-}
-
-nav details.dropdown.link-dropdown summary svg {
-    display: block;
-    stroke: currentColor;
-    vertical-align: middle;
-}
-
-/* 6. Position the menu (Keep your existing logic) */
-nav details.dropdown.link-dropdown > summary + ul {
-    width: max-content;
-    min-width: 25ch;
-    left: auto;
-    right: 0;
-}
-
 .brand_text {
     color: var(--pico-primary);
     font-size: 2rem;
