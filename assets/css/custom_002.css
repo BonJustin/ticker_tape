@@ -192,9 +192,3 @@ math[display="block"] {
 footer {
     color: var(--pico-muted-color);
 }
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
