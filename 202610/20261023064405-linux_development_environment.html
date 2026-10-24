@@ -1,0 +1,277 @@
+<!doctype html>
+<html
+    data-theme="light"
+    xmlns="http://www.w3.org/1999/xhtml"
+    >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+                  <meta
+            name="keywords"
+            content="linux, uv, python"
+        />
+         
+        <title>Linux Dev Environment Guide</title>
+
+        <!-- Portable Asset Resolution using relative_root -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../favicon.ico"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../favicon.svg"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="../favicon-96x96.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="../apple-touch-icon.png"
+        />
+        <link rel="manifest" href="../site.webmanifest" />
+
+                <link rel="stylesheet" href="../assets/css/pico.css" />
+                <link rel="stylesheet" href="../assets/css/custom_002.css" />
+                <link rel="stylesheet" href="../assets/katex/katex.min.css" />
+        
+        <script
+            src="../assets/js/pico_pagefind.js"
+            type="module"
+        ></script>
+
+         
+    </head>
+
+    <body>
+        <header class="container site_header">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="brand_text"
+                            ><a
+                                href="../index.html"
+                                style="text-decoration: none"
+                                >JmB²</a
+                            ></span
+                        >
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="../index.html" data-tooltip="Home">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-house-icon lucide-house"
+                            >
+                                <path
+                                    d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+                                />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="open-search" data-tooltip="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search-icon lucide-search"
+                            >
+                                <path d="m21 21-4.34-4.34" />
+                                <circle cx="11" cy="11" r="8" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <hr />
+
+            
+        </header>
+
+        <main>
+            <div class="container">
+                <div style="display: none">
+                                        <span data-pagefind-body data-pagefind-meta="title">
+                        Linux Dev Environment Guide
+                    </span>
+                                         <span data-pagefind-body data-pagefind-meta="keywords">
+                        linux, uv, python
+                    </span>
+                                    </div>
+
+                                <header id="title-block-header">
+                    <h1 class="title">Linux Dev Environment Guide</h1>
+
+                                      </header>
+                  <section id="local-system-details" class="level2">
+<h2>Local system details</h2>
+<p>Linux Fedora Kinoite is installed with encryption on a 2 TB NVMe. A second NTFS formatted SSD is my personal data drive.</p>
+</section>
+<section id="zed-notes" class="level2">
+<h2>Zed notes</h2>
+<p>I use the Zed IDE, installed to local user space via:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-f</span> https://zed.dev/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div>
+</section>
+<section id="uv-notes" class="level2">
+<h2><code>uv</code> notes</h2>
+<p><em><code>uv</code> is a Rust-based Python package and project manager. See [UV].(https://docs.astral.sh/uv/)</em></p>
+<section id="installation" class="level3">
+<h3>Installation</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LsSf</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">sh</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> <span class="at">--version</span></span></code></pre></div>
+</section>
+<section id="specifying-the-python-version" class="level3">
+<h3>1. Specifying the Python Version</h3>
+<p>Python versioning in <code>uv</code> involves two distinct concepts: runtime execution pinning and compatibility constraint definition.</p>
+<section id="a.-pinning-the-active-interpreter-.python-version" class="level4">
+<h4>A. Pinning the Active Interpreter (<code>.python-version</code>)</h4>
+<p>To enforce which Python interpreter <code>uv</code> invokes for the project, pin the version:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pin to a minor or patch version (e.g., 3.12 or 3.11.8)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python pin 3.12</span></code></pre></div>
+<ul>
+<li><p><strong>Effect:</strong> Writes the version string to a <code>.python-version</code> file in the project root.</p></li>
+<li><p><strong>Interpreter Acquisition:</strong> If the requested version is not installed locally, <code>uv</code> automatically downloads and provisions a standalone CPython binary; manual system installation is not required. It can also be explicitly pre-fetched:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> python install 3.12</span></code></pre></div></li>
+</ul>
+</section>
+<section id="b.-defining-version-constraints-pyproject.toml" class="level4">
+<h4>B. Defining Version Constraints (<code>pyproject.toml</code>)</h4>
+<p>To specify the supported range for users or build systems: * Defined via the <code>requires-python</code> key in <code>pyproject.toml</code> (e.g., <code>requires-python = "&gt;=3.11"</code>). * Can be defined during initialization: <code>bash   uv init --python "&gt;=3.11"</code> * Or updated manually inside <code>pyproject.toml</code>.</p>
+<hr />
+</section>
+</section>
+<section id="managing-module-dependencies" class="level3">
+<h3>2. Managing Module Dependencies</h3>
+<p><code>uv</code> handles dependency management via atomic operations that update <code>pyproject.toml</code> and synchronize <code>uv.lock</code> and <code>.venv</code>.</p>
+<section id="a.-adding-dependencies" class="level4">
+<h4>A. Adding Dependencies</h4>
+<ul>
+<li><p><strong>Standard production dependency:</strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add httpx</span></code></pre></div></li>
+<li><p><strong>Version-constrained dependency:</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="st">&quot;pydantic&gt;=2.0,&lt;3.0&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="st">&quot;requests==2.31.0&quot;</span></span></code></pre></div></li>
+<li><p><strong>Package with extras:</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="st">&quot;fastapi[standard]&quot;</span></span></code></pre></div></li>
+<li><p><strong>Development / Test dependencies (Dependency Groups):</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adds to [dependency-groups.dev]</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--dev</span> pytest ruff</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Adds to a custom named group (e.g., &#39;docs&#39;)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="at">--group</span> docs mkdocs</span></code></pre></div></li>
+</ul>
+</section>
+<section id="b.-removing-dependencies" class="level4">
+<h4>B. Removing Dependencies</h4>
+<p>Removes the package reference from <code>pyproject.toml</code>, uninstalls it from <code>.venv</code>, and updates <code>uv.lock</code>:</p>
+<ul>
+<li><p><strong>From default dependencies:</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove httpx</span></code></pre></div></li>
+<li><p><strong>From a development/specific group:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove <span class="at">--dev</span> pytest</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> remove <span class="at">--group</span> docs mkdocs</span></code></pre></div></li>
+</ul>
+</section>
+<section id="c.-modifying-upgrading-dependencies" class="level4">
+<h4>C. Modifying / Upgrading Dependencies</h4>
+<ul>
+<li><p><strong>Adjusting bounds/constraints:</strong> Re-running <code>uv add</code> with a new version constraint overrides the previous entry in <code>pyproject.toml</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add <span class="st">&quot;pydantic&gt;=2.7&quot;</span></span></code></pre></div></li>
+<li><p><strong>Upgrading an existing package to the latest permitted version:</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Upgrade a single package within pyproject.toml constraints</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade-package</span> pydantic</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Upgrade all project packages within pyproject.toml constraints</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> lock <span class="at">--upgrade</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span></code></pre></div></li>
+<li><p><strong>Direct environment synchronization:</strong> To force <code>.venv</code> to reflect the exact lockfile state manually:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync</span></code></pre></div></li>
+</ul>
+</section>
+</section>
+<section id="contextual-execution-uv-run" class="level3">
+<h3>3. Contextual Execution: <code>uv run</code></h3>
+<p><code>uv run</code> automatically validates that <code>.venv</code> matches <code>uv.lock</code>, provisions missing dependencies if necessary, injects the correct <code>PATH</code> and environment variables, and executes the target without modifying the host shell state.</p>
+<ul>
+<li><p><strong>Direct script execution:</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run main.py</span></code></pre></div>
+<p><em>(Or explicitly passing the interpreter: <code>uv run python main.py</code>)</em></p></li>
+<li><p><strong>Passing arguments to the script:</strong> Arguments following the script name are forwarded directly to the Python runtime:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run main.py <span class="at">--input</span> data.csv <span class="at">--verbose</span></span></code></pre></div></li>
+<li><p><strong>Module execution:</strong> To execute a module within a package namespace:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run python <span class="at">-m</span> my_package.core</span></code></pre></div></li>
+<li><p><strong>Installed console scripts / CLI tools:</strong> If a dependency installs an executable binary (e.g., <code>pytest</code>, <code>ruff</code>, or entry points declared in <code>pyproject.toml</code> under <code>[project.scripts]</code>):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run pytest</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run ruff check .</span></code></pre></div></li>
+</ul>
+</section>
+</section>
+            </div>
+        </main>
+
+        <footer class="container">
+            <hr />
+            <div class="grid">
+                <div>linux, uv, python</div>
+                <div style="text-align: right">
+                                    </div>
+            </div>
+
+            
+        </footer>
+
+        <dialog id="search-modal">
+            <article style="width: 100%; max-width: 600px">
+                <header>
+                    <button
+                        aria-label="Close"
+                        rel="prev"
+                        id="close-search"
+                    ></button>
+                    <strong>Search Titles & Keywords</strong>
+                </header>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Type to search..."
+                    autocomplete="off"
+                />
+                <ul
+                    id="search-results"
+                    style="list-style: none; padding-left: 0; margin-top: 1rem"
+                ></ul>
+            </article>
+        </dialog>
+    </body>
+</html>
