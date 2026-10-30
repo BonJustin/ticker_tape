@@ -1,0 +1,563 @@
+<!doctype html>
+<html
+    data-theme="light"
+    xmlns="http://www.w3.org/1999/xhtml"
+    >
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+
+                  <meta
+            name="keywords"
+            content="computer reference, vcard, contacts"
+        />
+         
+        <title>vCard Common/Universal Properties</title>
+
+        <!-- Portable Asset Resolution using relative_root -->
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../favicon.ico"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../favicon.svg"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="../favicon-96x96.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="../apple-touch-icon.png"
+        />
+        <link rel="manifest" href="../site.webmanifest" />
+
+                <link rel="stylesheet" href="../assets/css/pico.css" />
+                <link rel="stylesheet" href="../assets/css/custom_002.css" />
+                <link rel="stylesheet" href="../assets/katex/katex.min.css" />
+        
+        <script
+            src="../assets/js/pico_pagefind.js"
+            type="module"
+        ></script>
+
+         
+    </head>
+
+    <body>
+        <header class="container site_header">
+            <nav>
+                <ul>
+                    <li>
+                        <span class="brand_text"
+                            ><a
+                                href="../index.html"
+                                style="text-decoration: none"
+                                >JmB²</a
+                            ></span
+                        >
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="../index.html" data-tooltip="Home">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-house-icon lucide-house"
+                            >
+                                <path
+                                    d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"
+                                />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                                />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="open-search" data-tooltip="Search">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search-icon lucide-search"
+                            >
+                                <path d="m21 21-4.34-4.34" />
+                                <circle cx="11" cy="11" r="8" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <hr />
+
+            
+        </header>
+
+        <main>
+            <div class="container">
+                <div style="display: none">
+                                        <span data-pagefind-body data-pagefind-meta="title">
+                        vCard Common/Universal Properties
+                    </span>
+                                         <span data-pagefind-body data-pagefind-meta="keywords">
+                        computer reference, vcard, contacts
+                    </span>
+                                    </div>
+
+                                <header id="title-block-header">
+                    <h1 class="title">vCard Common/Universal Properties</h1>
+
+                                      </header>
+                  <section id="master-example-required-fields" class="level3">
+<h3>Master Example (Required Fields)</h3>
+<pre class="text"><code>BEGIN:VCARD
+VERSION:4.0
+UID:urn:contact:20241025000001
+FN:John Doe
+END:VCARD</code></pre>
+<hr />
+</section>
+<section id="master-example-all-universalcommon-fields" class="level3">
+<h3>Master Example (All Universal/Common Fields)</h3>
+<pre class="text"><code>BEGIN:VCARD
+VERSION:4.0
+UID:urn:contact:20241025143000
+REV:20241025T143000Z
+FN:Dr. Jane Marie Doe\, Jr.
+N:Doe;Jane;Marie;Dr.;Jr.
+NICKNAME:Janie,TechLead
+GENDER:F
+BDAY:19840412
+ANNIVERSARY:20100618
+ORG:Acme Dynamics\; Global;Cloud Infrastructure
+TITLE:Principal Systems Architect
+ROLE:Technical Team Lead
+CATEGORIES:Colleagues,VIP,Open Source
+TEL;TYPE=&quot;cell,text,pref&quot;;VALUE=uri:tel:+1-555-019-2834
+TEL;TYPE=&quot;work,voice&quot;;VALUE=uri:tel:+1-555-019-9000;ext=4421
+TEL;TYPE=home;VALUE=uri:tel:+1-555-019-1122
+EMAIL;TYPE=&quot;work,pref&quot;:jane.doe@acme.example.com
+EMAIL;TYPE=home:jane.personal@example.net
+EMAIL;TYPE=other:janie.academic@alumni.univ.edu
+URL;TYPE=work:https://acme.example.com
+URL;TYPE=home:https://janedoe.dev
+URL:https://github.com/janedoe
+ADR;TYPE=&quot;work,pref&quot;:;;Suite 400\n100 Technology Way;Austin;TX;78701;USA
+ADR;TYPE=home:;;42 Elm Street;Austin;TX;78704;USA
+IMPP;TYPE=personal:xmpp:janedoe@chat.example.com
+LANG:en-US
+TZ:America/Chicago
+GEO:geo:30.2672,-97.7431
+NOTE:Met at Systems Architecture Conference 2023.\nKey collaborator on database scaling.\nPrefers communications via Signal.
+END:BEGIN:VCARD
+VERSION:4.0
+UID:urn:contact:00000000000000
+FN:First Last
+N:Last;First;;;
+CATEGORIES:Friends,Work
+TEL;TYPE=&quot;cell&quot;;VALUE=uri:tel:+1-000-000-0000
+EMAIL;TYPE=pref:email@example.com
+NOTE:Notes go here.
+END:VCARD</code></pre>
+<hr />
+</section>
+<section id="exhaustive-field-reference" class="level3">
+<h3>Exhaustive Field Reference</h3>
+<section id="core-structure-metadata" class="level4">
+<h4>1. Core Structure &amp; Metadata</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Syntax / Value</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>BEGIN</code></strong></td>
+<td style="text-align: left;"><strong>Mandatory</strong></td>
+<td style="text-align: left;"><code>BEGIN:VCARD</code></td>
+<td style="text-align: left;">Must be the very first line of every card.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>VERSION</code></strong></td>
+<td style="text-align: left;"><strong>Mandatory</strong></td>
+<td style="text-align: left;"><code>VERSION:4.0</code></td>
+<td style="text-align: left;">Must immediately follow <code>BEGIN:VCARD</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>UID</code></strong></td>
+<td style="text-align: left;"><strong>Required</strong></td>
+<td style="text-align: left;"><code>UID:urn:&lt;scheme&gt;:&lt;id&gt;</code></td>
+<td style="text-align: left;">Persistent unique identifier across systems. Format must be a valid URI (e.g., <code>urn:contact:12345678901234</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>REV</code></strong></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;"><code>REV:YYYYMMDD'T'HHMMSS'Z'</code></td>
+<td style="text-align: left;">Revision timestamp in UTC. Used by sync engines to determine the most recent edit.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>END</code></strong></td>
+<td style="text-align: left;"><strong>Mandatory</strong></td>
+<td style="text-align: left;"><code>END:VCARD</code></td>
+<td style="text-align: left;">Must be the final line of every card.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+<section id="name-display-properties" class="level4">
+<h4>2. Name &amp; Display Properties</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Syntax / Components</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>FN</code></strong></td>
+<td style="text-align: left;"><strong>Mandatory</strong></td>
+<td style="text-align: left;">Single text string</td>
+<td style="text-align: left;"><strong>Formatted Name</strong>. The primary human-readable display string in address books. Commas must be escaped (<code>\,</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>N</code></strong></td>
+<td style="text-align: left;">Recommended</td>
+<td style="text-align: left;"><code>Family;Given;Additional;Prefix;Suffix</code></td>
+<td style="text-align: left;"><strong>Structured Name</strong>. Used for sorting by last name. Semicolons separate the 5 positional components. Empty parts are left blank (e.g., <code>Doe;Jane;;;</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>NICKNAME</code></strong></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">Comma-separated strings</td>
+<td style="text-align: left;">Informal names or aliases (e.g., <code>NICKNAME:Bob,Bobby</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+<section id="organizational-role-fields" class="level4">
+<h4>3. Organizational &amp; Role Fields</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Syntax / Components</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>ORG</code></strong></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;"><code>Company;Department;Unit</code></td>
+<td style="text-align: left;">Organization structure. Semicolons denote hierarchy (e.g., <code>Acme;Engineering;Firmware</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>TITLE</code></strong></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">Single text string</td>
+<td style="text-align: left;">Job title within the organization (e.g., <code>TITLE:Senior Engineer</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>ROLE</code></strong></td>
+<td style="text-align: left;">Optional</td>
+<td style="text-align: left;">Single text string</td>
+<td style="text-align: left;">Business role or function (e.g., <code>ROLE:Project Lead</code> or <code>ROLE:Consultant</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+<section id="telephones-tel" class="level4">
+<h4>4. Telephones (<code>TEL</code>)</h4>
+<p>vCard 4.0 standardizes phone numbers using <strong><code>VALUE=uri:tel:...</code></strong> in international E.164 format (<code>+CountryCode-Area-Number</code>).</p>
+<ul>
+<li><strong>Common Types (<code>TYPE=</code>):</strong>
+<ul>
+<li><code>cell</code> (or <code>mobile</code>): Mobile device (voice + text assumed).</li>
+<li><code>work</code>: Workplace telephone.</li>
+<li><code>home</code>: Home landline.</li>
+<li><code>voice</code>: Explicitly voice-capable.</li>
+<li><code>text</code>: Explicitly SMS/message-capable.</li>
+<li><code>main</code>: Switchboard / general line for an organization.</li>
+<li><code>fax</code>: Fax machine.</li>
+<li><code>pref</code>: The primary number to display or dial.</li>
+</ul></li>
+<li><strong>Extensions:</strong> Added with <code>;ext=</code> at the end of the URI:
+<ul>
+<li><code>TEL;TYPE="work,voice";VALUE=uri:tel:+1-555-019-9000;ext=104</code></li>
+</ul></li>
+</ul>
+<hr />
+</section>
+<section id="email-addresses-email" class="level4">
+<h4>5. Email Addresses (<code>EMAIL</code>)</h4>
+<p>Stores the email address with an optional context type.</p>
+<ul>
+<li><strong>Valid Types (<code>TYPE=</code>):</strong>
+<ul>
+<li><code>home</code>: Personal email address.</li>
+<li><code>work</code>: Corporate / professional email address.</li>
+<li><code>other</code>: Secondary / miscellaneous address.</li>
+<li><code>pref</code>: Mark which address your email client should pick by default.</li>
+</ul></li>
+<li><strong>Combining Types:</strong> Combine with quotes: <code>EMAIL;TYPE="work,pref":jane@company.com</code>.</li>
+</ul>
+<hr />
+</section>
+<section id="physical-addresses-adr" class="level4">
+<h4>6. Physical Addresses (<code>ADR</code>)</h4>
+<p>Addresses use a <strong>7-part positional semicolon-delimited</strong> format:</p>
+<pre class="text"><code>ADR;TYPE=&lt;type&gt;:PO_Box;Extended_Address;Street_Address;Locality(City);Region(State);Postal_Code;Country</code></pre>
+<ul>
+<li><strong>Empty Components:</strong> The first two parts (PO Box and Extended Address) are rarely used today, which is why standard street addresses start with two semicolons: <code>ADR:;;123 Main St;Springfield;IL;62701;USA</code>.</li>
+<li><strong>Multiline Streets:</strong> Separate apartment or suite numbers using literal <code>\n</code>: <code>ADR;TYPE=work:;;Suite 400\n100 Tech Way;Austin;TX;78701;USA</code></li>
+<li><strong>Valid Types:</strong> <code>home</code>, <code>work</code>, <code>pref</code>.</li>
+</ul>
+<hr />
+</section>
+<section id="web-instant-messaging" class="level4">
+<h4>7. Web &amp; Instant Messaging</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Syntax / Values</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>URL</code></strong></td>
+<td style="text-align: left;"><code>URL;TYPE=&lt;type&gt;:https://...</code></td>
+<td style="text-align: left;">Websites, blogs, or public profiles. Types: <code>work</code>, <code>home</code>, <code>other</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>IMPP</code></strong></td>
+<td style="text-align: left;"><code>IMPP;TYPE=&lt;type&gt;:&lt;protocol&gt;:&lt;handle&gt;</code></td>
+<td style="text-align: left;"><strong>Instant Messaging</strong>. Examples: <code>xmpp:user@domain.com</code>, <code>sip:user@domain.com</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+<section id="personal-dates" class="level4">
+<h4>8. Personal &amp; Dates</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Syntax / Values</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>BDAY</code></strong></td>
+<td style="text-align: left;"><code>YYYYMMDD</code> or <code>YYYY-MM-DD</code></td>
+<td style="text-align: left;">Birthday. If the birth year is unknown, the RFC allows the yearless format: <code>--0412</code> (April 12).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>ANNIVERSARY</code></strong></td>
+<td style="text-align: left;"><code>YYYYMMDD</code></td>
+<td style="text-align: left;">Wedding or milestone anniversary date.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>GENDER</code></strong></td>
+<td style="text-align: left;"><code>M</code>, <code>F</code>, <code>O</code>, <code>N</code>, <code>U</code></td>
+<td style="text-align: left;">Gender identity per RFC 6350: <strong>M</strong>ale, <strong>F</strong>emale, <strong>O</strong>ther, <strong>N</strong>one, <strong>U</strong>nknown.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+<section id="categorization-metadata" class="level4">
+<h4>9. Categorization &amp; Metadata</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Syntax / Values</th>
+<th style="text-align: left;">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>CATEGORIES</code></strong></td>
+<td style="text-align: left;">Comma-separated list</td>
+<td style="text-align: left;">Tags and contact groups (e.g., <code>CATEGORIES:Friends,Family,Tennis Club</code>). Maps to Google Labels, Apple Groups, and Proton Tags.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>NOTE</code></strong></td>
+<td style="text-align: left;">Escaped text string</td>
+<td style="text-align: left;">Free-form notes. Multi-line notes <strong>must</strong> use literal <code>\n</code> instead of actual Return key strokes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>TZ</code></strong></td>
+<td style="text-align: left;">IANA Timezone string</td>
+<td style="text-align: left;">Geographic timezone (e.g., <code>TZ:America/New_York</code> or <code>TZ:Europe/Stockholm</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>GEO</code></strong></td>
+<td style="text-align: left;"><code>geo:latitude,longitude</code></td>
+<td style="text-align: left;">Coordinates of the contact’s home or office (e.g., <code>GEO:geo:37.7749,-122.4194</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>LANG</code></strong></td>
+<td style="text-align: left;">BCP 47 language tag</td>
+<td style="text-align: left;">Primary spoken/written language (e.g., <code>LANG:en-US</code>, <code>LANG:sv-SE</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</section>
+<section id="universal-delimiter-escaping-cheat-sheet" class="level3">
+<h3>Universal Delimiter &amp; Escaping Cheat Sheet</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Character</th>
+<th style="text-align: left;">Literal Meaning</th>
+<th style="text-align: left;">How to Escape inside Values</th>
+<th style="text-align: left;">Where it applies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>;</code></strong></td>
+<td style="text-align: left;">Field/component separator</td>
+<td style="text-align: left;"><code>\;</code></td>
+<td style="text-align: left;">Inside <code>FN</code>, <code>ORG</code>, <code>NOTE</code>, company names</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>,</code></strong></td>
+<td style="text-align: left;">List/type separator</td>
+<td style="text-align: left;"><code>\,</code></td>
+<td style="text-align: left;">Inside names, addresses, notes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>\</code></strong></td>
+<td style="text-align: left;">Escape character</td>
+<td style="text-align: left;"><code>\\</code></td>
+<td style="text-align: left;">File paths or literal backslashes</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Enter</strong></td>
+<td style="text-align: left;">End of vCard property line</td>
+<td style="text-align: left;"><code>\n</code></td>
+<td style="text-align: left;">Inside <code>NOTE</code> or multiline street addresses</td>
+</tr>
+</tbody>
+</table>
+</section>
+            </div>
+        </main>
+
+        <footer class="container">
+            <hr />
+            <div class="grid">
+                <div>computer reference, vcard, contacts</div>
+                <div style="text-align: right">
+                                    </div>
+            </div>
+
+            
+        </footer>
+
+        <dialog id="search-modal">
+            <article style="width: 100%; max-width: 600px">
+                <header>
+                    <button
+                        aria-label="Close"
+                        rel="prev"
+                        id="close-search"
+                    ></button>
+                    <strong>Search Titles & Keywords</strong>
+                </header>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Type to search..."
+                    autocomplete="off"
+                />
+                <ul
+                    id="search-results"
+                    style="list-style: none; padding-left: 0; margin-top: 1rem"
+                ></ul>
+            </article>
+        </dialog>
+    </body>
+</html>
